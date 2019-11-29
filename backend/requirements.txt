@@ -1,0 +1,9 @@
+Flask
+flask-restful
+flask-jwt-extended
+flask_sqlalchemy
+Flask-Script
+Flask-Migrate
+gunicorn
+pytest
+psycopg2
