@@ -28,6 +28,8 @@ class RegistrationViewController : UIViewController {
                             self.performSegue(withIdentifier: "segueSignUp", sender: self)
                         }
                     }
+                } else {
+                    showAlert(controller: self, title: "Error", message: "Network error: could not connect")
                 }
             })
         }

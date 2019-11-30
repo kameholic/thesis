@@ -1,5 +1,13 @@
 import Foundation
 
+func backendURL() -> String {
+#if RELEASE
+    return "https://diet-thesis.herokuapp.com/"
+#else
+    return "http://127.0.0.1:5000/"
+#endif
+}
+
 func post(method:String, endPoint: String, postData: [String:Any], completion: @escaping (NSDictionary?, Int?) -> ()) {
     let data = try! JSONSerialization.data(withJSONObject: postData, options: JSONSerialization.WritingOptions.prettyPrinted)
     print("postData = \(postData)")
@@ -10,7 +18,7 @@ func post(method:String, endPoint: String, postData: [String:Any], completion: @
     }
     let jsonData = json!.data(using: String.Encoding.utf8.rawValue);
     
-    let url = URL(string: "https://diet-thesis.herokuapp.com/\(endPoint)")!
+    let url = URL(string: "\(backendURL())\(endPoint)")!
     print("url = \(url)")
     var request = URLRequest(url: url)
     request.setValue("application/json; charset=UTF-8", forHTTPHeaderField: "Content-Type")
@@ -24,7 +32,7 @@ func post(method:String, endPoint: String, postData: [String:Any], completion: @
 func post(method:String, endPoint: String, postString: String, completion: @escaping (NSDictionary?, Int?) -> ()) {
     print("postString = \(postString)")
 
-    let url = URL(string: "https://diet-thesis.herokuapp.com/\(endPoint)")!
+    let url = URL(string: "\(backendURL())\(endPoint)")!
     print("url = \(url)")
     var request = URLRequest(url: url)
     request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
@@ -40,7 +48,8 @@ func post(method:String, endPoint: String, request: URLRequest, completion: @esc
     DispatchQueue.main.async {
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
             guard let data = data, error == nil else {
-                return // check for fundamental networking error
+                completion(nil, nil)
+                return
             }
             
             var statusCode: Int? = nil

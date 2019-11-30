@@ -11,7 +11,7 @@ class Config(object):
     BUNDLE_ERRORS = True
     JWT_SECRET_KEY = 'super-secret'
     JWT_ERROR_MESSAGE_KEY = 'message'
-    JWT_REFRESH_TOKEN_EXPIRES = timedelta(days=7)
+    JWT_ACCESS_TOKEN_EXPIRES = timedelta(days=7)
     PROPAGATE_EXCEPTIONS = True
 
 
@@ -29,6 +29,7 @@ class DevConfig(Config):
     DEVDB_PATH = "./{}".format(DEVDB)
     DEV_DATABASE_URI = 'sqlite:///' + DEVDB_PATH
     SQLALCHEMY_DATABASE_URI = DEV_DATABASE_URI
+    DEBUG = True
 
 
 class TestConfig(Config):
@@ -39,4 +40,3 @@ class TestConfig(Config):
     TEST_DATABASE_URI = 'sqlite:///' + TESTDB_PATH
     SQLALCHEMY_DATABASE_URI = TEST_DATABASE_URI
     TESTING = True
-    DEBUG = True

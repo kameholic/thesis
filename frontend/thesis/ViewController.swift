@@ -11,56 +11,22 @@ import EasyStash
 
 class ViewController: UIViewController {
     @IBOutlet weak var textview: UITextView!
-    @IBOutlet weak var buttonClick: UIButton!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
-    @IBOutlet weak var bigtextview: UITextView!
     
-    @IBAction func clickme(_ sender: Any) {
-        // create post request
-        let url = URL(string: "http://127.0.0.1:5000/schools")!
-        var request = URLRequest(url: url)
-        request.httpMethod = "GET"
-        
-        let task = URLSession.shared.dataTask(with: request) { data, response, error in
-            guard let data = data, error == nil else {
-                print(error?.localizedDescription ?? "No data")
-                return
-            }
-            let responseJSON = try? JSONSerialization.jsonObject(with: data, options: [])
-            if let responseJSON = responseJSON as? [String: Any] {
-                print(responseJSON)
-            }
-            let convertedString = String(data: data, encoding: String.Encoding.utf8)
-            self.bigtextview.text = convertedString
-        }
-        
-        task.resume()
-    }
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.pullAllergies()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         if AuthData.shared.accessToken == "" {
+            self.pullAllergies()
             self.loadAccessToken()
         }
     }
     
-    @IBAction func logOut(_ sender: UIButton) {
-        AuthData.shared.accessToken = ""
-        do {
-            var options = Options()
-            options.folder = "Users"
-            let storage = try! Storage(options: options)
-            try storage.save(object: AuthData.shared.accessToken, forKey: "accessToken")
-        }
-        catch {
-        }
-    }
-    
     @IBAction func logInButton(_ sender: UIButton) {
+        print("Login pressed")
         if  let email = emailTextField.text,
             let password = passwordTextField.text {
 
@@ -82,6 +48,7 @@ class ViewController: UIViewController {
                         }
                         
                         print(AuthData.shared.accessToken)
+                        self.pullAllergies()
                         self.pullData()
                         DispatchQueue.main.async {
                             self.performSegue(withIdentifier: "segueLogin", sender: self)
@@ -90,6 +57,8 @@ class ViewController: UIViewController {
                     else {
                         showAlert(controller: self, title:"Error", message: message)
                     }
+                } else {
+                    showAlert(controller: self, title: "Error", message: "Network error: could not connect")
                 }
             })
         }
@@ -120,6 +89,7 @@ class ViewController: UIViewController {
                 let message = response!["message"] as! NSDictionary
                 if status == 200 {
                     if let allergies = message["allergies"] as? NSDictionary {
+                        UserData.shared.allergies.removeAll()
                         for (id, name) in allergies {
                             if  let _id = id as? String,
                                 let _name = name as? String {
@@ -128,11 +98,14 @@ class ViewController: UIViewController {
                                 print("Bad allergy \(id):\(name)")
                             }
                         }
+                        print("Allergies pulled")
                     }
                 }
                 else {
                     showAlert(controller: self, title: "Error", message: message)
                 }
+            } else {
+                showAlert(controller: self, title: "Error", message: "Network error: could not connect")
             }
         })
     }
@@ -145,17 +118,28 @@ class ViewController: UIViewController {
                     if  let age = message["age"] as? Int,
                         let gender = message["gender"] as? String,
                         let lifestyle = message["lifestyle"] as? String,
-                        let weight = message["weight"] as? Double {
+                        let weight = message["weight"] as? Double,
+                        let allergies = message["allergies"] as? [Int] {
 
                         UserData.shared.age = age
                         UserData.shared.gender = gender.capitalized
                         UserData.shared.lifestyle = lifestyle.capitalized
                         UserData.shared.weight = weight
+                        
+                        for (id) in allergies {
+                            for index in 0..<UserData.shared.allergies.count {
+                                if UserData.shared.allergies[index].id == id {
+                                    UserData.shared.allergies[index].checked = true
+                                }
+                            }
+                        }
                     }
                 }
                 else {
                     showAlert(controller: self, title: "Error", message: message)
                 }
+            } else {
+                showAlert(controller: self, title: "Error", message: "Network error: could not connect")
             }
         })
     }
@@ -175,11 +159,13 @@ class ViewController: UIViewController {
                     let lifestyle = try storage.load(forKey: "lifestyle", as: String.self)
                     let weight = try storage.load(forKey: "weight", as: Double.self)
                     let allergies = try storage.load(forKey: "allergies", as: [UserData.Allergy].self)
+                    let diet = try storage.load(forKey: "diet", as: UserData.Diet.self)
                     UserData.shared.age = age
                     UserData.shared.gender = gender
                     UserData.shared.lifestyle = lifestyle
                     UserData.shared.weight = weight
                     UserData.shared.allergies = allergies
+                    UserData.shared.diet = diet
                     
                     print("Loaded from local database")
                 }

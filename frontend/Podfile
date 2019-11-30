@@ -8,5 +8,6 @@ target 'thesis' do
   # Pods for thesis
   pod 'EasyStash'
   pod 'JWTDecode'
+  pod 'RATreeView'
 
 end

@@ -98,7 +98,6 @@ def create_app(config=None):
         def post(self):
             user_id = get_jwt_identity()
             args = self.parser.parse_args()
-            all_allergies = generator.get_allergies()
             resp = generator.generate_diet(db,
                                            user_id,
                                            args['diet_type'],
@@ -111,7 +110,6 @@ def create_app(config=None):
             allergies = generator.get_allergies()
             resp.message = {'allergies': allergies}
             return create_response(resp)
-
 
     api.add_resource(RegisterUser, '/register')
     api.add_resource(LoginUser, '/login')

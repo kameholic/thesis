@@ -22,6 +22,24 @@ class UserData {
         }
     }
     
+    struct Recipe : Codable {
+        let name: String
+        let description: String
+        
+        public init(name: String, description: String) {
+            self.name = name
+            self.description = description
+        }
+    }
+    
+    struct Diet : Codable {
+        var days: [[String:Recipe]]
+        
+        public init() {
+            days = [[String:Recipe]]()
+        }
+    }
+    
     static let shared = UserData()
     
     var gender: String
@@ -29,13 +47,14 @@ class UserData {
     var lifestyle: String
     var weight: Double
     var allergies: [Allergy]
+    var diet: Diet
     
-    private init()
-    {
+    private init() {
         gender = ""
         age = 0
         lifestyle = ""
         weight = 0
         allergies = [Allergy]()
+        diet = Diet()
     }
 }

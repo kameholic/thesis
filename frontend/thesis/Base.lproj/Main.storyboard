@@ -23,7 +23,7 @@
                         </userGuides>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="0g7-ao-d3P">
-                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Nutrition-Header" translatesAutoresizingMaskIntoConstraints="NO" id="csJ-Zh-lbk">
                                         <rect key="frame" x="0.0" y="8" width="414" height="128"/>
@@ -128,41 +128,23 @@
                                         <edgeInsets key="layoutMargins" top="8" left="16" bottom="8" right="16"/>
                                     </stackView>
                                     <view contentMode="scaleToFill" verticalHuggingPriority="200" translatesAutoresizingMaskIntoConstraints="NO" id="Toe-YZ-rzz">
-                                        <rect key="frame" x="0.0" y="463.5" width="414" height="274"/>
-                                        <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ijo-su-xqU">
-                                                <rect key="frame" x="150" y="36.999999999999943" width="69" height="30"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <state key="normal" title="Click here"/>
-                                                <connections>
-                                                    <action selector="clickme:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ize-Kf-rPY"/>
-                                                </connections>
-                                            </button>
-                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="GmT-jT-hka">
-                                                <rect key="frame" x="87" y="74" width="240" height="128"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                            </textView>
-                                        </subviews>
+                                        <rect key="frame" x="0.0" y="463.5" width="414" height="308.5"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </view>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="qPb-Tb-o8t">
-                                        <rect key="frame" x="0.0" y="745.5" width="414" height="20.5"/>
+                                        <rect key="frame" x="0.0" y="780" width="414" height="30"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="TpU-ak-O3f">
-                                                <rect key="frame" x="87" y="0.0" width="240" height="20.5"/>
+                                                <rect key="frame" x="87" y="0.0" width="240" height="30"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Don't have an account?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1TB-hA-nAP">
-                                                        <rect key="frame" x="0.0" y="0.0" width="179" height="20.5"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="179" height="30"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ICL-Jz-1sn">
-                                                        <rect key="frame" x="183" y="0.0" width="57" height="20.5"/>
+                                                        <rect key="frame" x="183" y="0.0" width="57" height="30"/>
                                                         <color key="tintColor" red="0.50127920599999998" green="0.84818695889999995" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <state key="normal" title="Sign up!"/>
                                                         <connections>
@@ -189,8 +171,6 @@
                     </view>
                     <navigationItem key="navigationItem" id="zed-I9-FKq"/>
                     <connections>
-                        <outlet property="bigtextview" destination="GmT-jT-hka" id="iAC-Xm-MCO"/>
-                        <outlet property="buttonClick" destination="Ijo-su-xqU" id="ZaP-Mz-eln"/>
                         <outlet property="emailTextField" destination="166-IW-tHO" id="1kA-Ml-3tE"/>
                         <outlet property="passwordTextField" destination="m6t-7P-guS" id="7q4-4v-W0X"/>
                         <segue destination="g42-gq-tmd" kind="show" identifier="segueLogin" id="XlD-FJ-vwK"/>
@@ -216,18 +196,18 @@
             </objects>
             <point key="canvasLocation" x="2284" y="419"/>
         </scene>
-        <!--Storyboard Reference-->
-        <scene sceneID="V1L-5Y-7N6">
+        <!--dietPage-->
+        <scene sceneID="8oc-n1-2FO">
             <objects>
-                <viewControllerPlaceholder id="401-h6-2e0" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="UtP-h3-9gm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewControllerPlaceholder storyboardName="Diet" referencedIdentifier="dietPage" id="VeI-fb-Ej0" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lHR-Ax-9Tm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1456" y="-351"/>
+            <point key="canvasLocation" x="2100" y="-351"/>
         </scene>
-        <!--View Controller-->
+        <!--Dashboard Controller-->
         <scene sceneID="iUU-ha-INK">
             <objects>
-                <viewController storyboardIdentifier="loginPage" useStoryboardIdentifierAsRestorationIdentifier="YES" id="g42-gq-tmd" customClass="ViewController" customModule="thesis" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="loginPage" useStoryboardIdentifierAsRestorationIdentifier="YES" id="g42-gq-tmd" customClass="DashboardController" customModule="thesis" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="YyR-lW-jGf">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -236,88 +216,67 @@
                             <userLayoutGuide location="398" affinity="minX"/>
                         </userGuides>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="ZXg-9J-yPx">
-                                <rect key="frame" x="0.0" y="88" width="42" height="20.5"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </stackView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="Nutrition-Header" translatesAutoresizingMaskIntoConstraints="NO" id="73i-0b-sJ3">
-                                <rect key="frame" x="0.0" y="88" width="414" height="128"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Nutrition-Header" translatesAutoresizingMaskIntoConstraints="NO" id="73i-0b-sJ3">
+                                <rect key="frame" x="0.0" y="44" width="414" height="128"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="414" id="4RG-92-5GK"/>
                                     <constraint firstAttribute="height" constant="128" id="p3P-jT-OLp"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Welcome back!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d2k-ox-hnm">
-                                <rect key="frame" x="149" y="253" width="118" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Your current diet:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TWJ-il-Wdx">
-                                <rect key="frame" x="38" y="318" width="133" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l7W-UY-EGA">
-                                <rect key="frame" x="107" y="507" width="83" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Preferences"/>
-                                <connections>
-                                    <segue destination="BNp-cg-zF7" kind="show" id="6mM-Wf-12L"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4lF-Y5-Od2" userLabel="Log out">
-                                <rect key="frame" x="104" y="545" width="52" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Log out"/>
-                                <connections>
-                                    <action selector="logOut:" destination="g42-gq-tmd" eventType="touchUpInside" id="lII-tL-rLm"/>
-                                    <segue destination="BYZ-38-t0r" kind="show" id="kDJ-Y8-qHe"/>
-                                </connections>
-                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="vSa-iW-g8e">
+                                <rect key="frame" x="149" y="232" width="117.5" height="140.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome back!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VhY-wI-IWi">
+                                        <rect key="frame" x="0.0" y="0.0" width="117.5" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l7W-UY-EGA">
+                                        <rect key="frame" x="0.0" y="20.5" width="117.5" height="30"/>
+                                        <state key="normal" title="Preferences"/>
+                                        <connections>
+                                            <segue destination="BNp-cg-zF7" kind="show" id="6mM-Wf-12L"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B3v-8K-PZg">
+                                        <rect key="frame" x="0.0" y="50.5" width="117.5" height="30"/>
+                                        <state key="normal" title="View my diet"/>
+                                        <connections>
+                                            <segue destination="VeI-fb-Ej0" kind="show" id="zRG-bg-oBp"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oJl-3E-pJu">
+                                        <rect key="frame" x="0.0" y="80.5" width="117.5" height="30"/>
+                                        <state key="normal" title="New diet"/>
+                                        <connections>
+                                            <action selector="newDietButton:" destination="g42-gq-tmd" eventType="touchUpInside" id="OzT-32-BCL"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4lF-Y5-Od2" userLabel="Log out">
+                                        <rect key="frame" x="0.0" y="110.5" width="117.5" height="30"/>
+                                        <state key="normal" title="Log out"/>
+                                        <connections>
+                                            <action selector="logOutButton:" destination="g42-gq-tmd" eventType="touchUpInside" id="uiK-Pe-pxc"/>
+                                            <segue destination="BYZ-38-t0r" kind="show" id="kDJ-Y8-qHe"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="vSa-iW-g8e" firstAttribute="leading" secondItem="bZJ-IG-lAf" secondAttribute="leading" constant="149" id="5co-jq-Uem"/>
+                            <constraint firstItem="73i-0b-sJ3" firstAttribute="leading" secondItem="YyR-lW-jGf" secondAttribute="leading" id="HQH-Vd-ZxC"/>
                             <constraint firstItem="73i-0b-sJ3" firstAttribute="top" secondItem="bZJ-IG-lAf" secondAttribute="top" id="RDS-78-AE9"/>
+                            <constraint firstItem="vSa-iW-g8e" firstAttribute="top" secondItem="73i-0b-sJ3" secondAttribute="bottom" constant="8" symbolic="YES" id="rNE-kK-L2n"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="bZJ-IG-lAf"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="E6T-bK-wXc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1967" y="19"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="fWV-G1-wcA">
-            <objects>
-                <viewController useStoryboardIdentifierAsRestorationIdentifier="YES" id="wFg-yx-8pe" customClass="ViewController" customModule="thesis" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="01u-cj-rDR">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="zyz-hg-fcy">
-                                <rect key="frame" x="74" y="157" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="fg4-rP-thl"/>
-                    </view>
-                    <connections>
-                        <outlet property="emailTextField" destination="zyz-hg-fcy" id="qfS-1q-e1w"/>
-                        <outlet property="textview" destination="zyz-hg-fcy" id="FL7-RB-hw2"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="q00-fA-lGC" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2604" y="19"/>
+            <point key="canvasLocation" x="1966.6666666666667" y="18.75"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="EeZ-Ig-fRJ">
@@ -342,6 +301,6 @@
         <image name="Nutrition-Header" width="1200" height="300"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="XUC-DC-Qmm"/>
+        <segue reference="kDJ-Y8-qHe"/>
     </inferredMetricsTieBreakers>
 </document>

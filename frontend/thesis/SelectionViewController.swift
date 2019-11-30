@@ -133,8 +133,7 @@ class SelectionViewController: UIViewController, UIPickerViewDelegate, UIPickerV
             ]
             
             post(method: "POST", endPoint: "user_infos", postData: params, completion: { response, status in
-                if response != nil, status != nil
-                {
+                if response != nil, status != nil {
                     if status != 200 {
                         if let message = response!["message"] as? NSDictionary? {
                             showAlert(controller: self, title: "Error", message: message!)
@@ -161,6 +160,8 @@ class SelectionViewController: UIViewController, UIPickerViewDelegate, UIPickerV
                         catch {
                         }
                     }
+                } else {
+                    showAlert(controller: self, title: "Error", message: "Network error: could not connect")
                 }
             })
         }

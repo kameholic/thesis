@@ -22,6 +22,12 @@
 		0450AF8C238731790052CBAD /* REST.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0450AF8B238731790052CBAD /* REST.swift */; };
 		0450AF8E238B25070052CBAD /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0450AF8D238B25070052CBAD /* UserData.swift */; };
 		0450AF90238C86AB0052CBAD /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0450AF8F238C86AB0052CBAD /* Alert.swift */; };
+		04D082552392C40D00535F11 /* DashboardController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D082542392C40D00535F11 /* DashboardController.swift */; };
+		04D082582392D6FC00535F11 /* TreeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D082572392D6FC00535F11 /* TreeTableViewCell.swift */; };
+		04D0825A2392DAC600535F11 /* DataObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D082592392DAC600535F11 /* DataObject.swift */; };
+		04D0825C2392E04500535F11 /* TreeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04D0825B2392E04500535F11 /* TreeTableViewCell.xib */; };
+		04D0825E2392E13900535F11 /* TreeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D0825D2392E13900535F11 /* TreeViewController.swift */; };
+		04D082612392E78800535F11 /* Diet.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04D082602392E78800535F11 /* Diet.storyboard */; };
 		D21C435ACB174B0E302DDD57 /* Pods_thesis.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C3B3C887D750D949FBCB997 /* Pods_thesis.framework */; };
 /* End PBXBuildFile section */
 
@@ -43,6 +49,13 @@
 		0450AF8B238731790052CBAD /* REST.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = REST.swift; sourceTree = "<group>"; };
 		0450AF8D238B25070052CBAD /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
 		0450AF8F238C86AB0052CBAD /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
+		04D082542392C40D00535F11 /* DashboardController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardController.swift; sourceTree = "<group>"; };
+		04D082572392D6FC00535F11 /* TreeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreeTableViewCell.swift; sourceTree = "<group>"; };
+		04D082592392DAC600535F11 /* DataObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataObject.swift; sourceTree = "<group>"; };
+		04D0825B2392E04500535F11 /* TreeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TreeTableViewCell.xib; sourceTree = "<group>"; };
+		04D0825D2392E13900535F11 /* TreeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreeViewController.swift; sourceTree = "<group>"; };
+		04D082602392E78800535F11 /* Diet.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Diet.storyboard; sourceTree = "<group>"; };
+		1E9E862E32A018DEE295FF19 /* Pods-thesis.development.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-thesis.development.xcconfig"; path = "Pods/Target Support Files/Pods-thesis/Pods-thesis.development.xcconfig"; sourceTree = "<group>"; };
 		729DFC364C5B2F8B5619E3DF /* Pods-thesis.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-thesis.release.xcconfig"; path = "Pods/Target Support Files/Pods-thesis/Pods-thesis.release.xcconfig"; sourceTree = "<group>"; };
 		8C3B3C887D750D949FBCB997 /* Pods_thesis.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_thesis.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E707734B734F782168410F08 /* Pods-thesis.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-thesis.debug.xcconfig"; path = "Pods/Target Support Files/Pods-thesis/Pods-thesis.debug.xcconfig"; sourceTree = "<group>"; };
@@ -83,16 +96,18 @@
 			children = (
 				0450AF8D238B25070052CBAD /* UserData.swift */,
 				0450AF8A238731490052CBAD /* Utility */,
-				04343F36232D2B2C00C39219 /* AppDelegate.swift */,
-				04343F38232D2B2C00C39219 /* ViewController.swift */,
+				04D082562392D65300535F11 /* TreeView */,
 				0450AF8123809B3E0052CBAD /* Authentication */,
-				04343F3A232D2B2C00C39219 /* Main.storyboard */,
 				0450AF7C2370CF6D0052CBAD /* Selection.storyboard */,
 				0450AF7F2370D1AC0052CBAD /* SelectionViewController.swift */,
+				04343F36232D2B2C00C39219 /* AppDelegate.swift */,
+				04343F38232D2B2C00C39219 /* ViewController.swift */,
+				04343F3A232D2B2C00C39219 /* Main.storyboard */,
 				04343F3D232D2B2D00C39219 /* Assets.xcassets */,
 				04343F3F232D2B2D00C39219 /* LaunchScreen.storyboard */,
 				04343F42232D2B2D00C39219 /* Info.plist */,
 				04343F48232D34F100C39219 /* DesignableView.swift */,
+				04D082542392C40D00535F11 /* DashboardController.swift */,
 			);
 			path = thesis;
 			sourceTree = "<group>";
@@ -117,6 +132,18 @@
 			path = Utility;
 			sourceTree = "<group>";
 		};
+		04D082562392D65300535F11 /* TreeView */ = {
+			isa = PBXGroup;
+			children = (
+				04D082572392D6FC00535F11 /* TreeTableViewCell.swift */,
+				04D082592392DAC600535F11 /* DataObject.swift */,
+				04D0825D2392E13900535F11 /* TreeViewController.swift */,
+				04D0825B2392E04500535F11 /* TreeTableViewCell.xib */,
+				04D082602392E78800535F11 /* Diet.storyboard */,
+			);
+			path = TreeView;
+			sourceTree = "<group>";
+		};
 		1930C474672D595CE46D1719 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -130,6 +157,7 @@
 			children = (
 				E707734B734F782168410F08 /* Pods-thesis.debug.xcconfig */,
 				729DFC364C5B2F8B5619E3DF /* Pods-thesis.release.xcconfig */,
+				1E9E862E32A018DEE295FF19 /* Pods-thesis.development.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -201,7 +229,9 @@
 				0450AF8323809B750052CBAD /* Authentication.storyboard in Resources */,
 				04343F41232D2B2D00C39219 /* LaunchScreen.storyboard in Resources */,
 				0450AF7E2370CF6D0052CBAD /* Selection.storyboard in Resources */,
+				04D0825C2392E04500535F11 /* TreeTableViewCell.xib in Resources */,
 				04343F3E232D2B2D00C39219 /* Assets.xcassets in Resources */,
+				04D082612392E78800535F11 /* Diet.storyboard in Resources */,
 				04343F3C232D2B2C00C39219 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -218,11 +248,13 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-thesis/Pods-thesis-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/EasyStash/EasyStash.framework",
 				"${BUILT_PRODUCTS_DIR}/JWTDecode/JWTDecode.framework",
+				"${BUILT_PRODUCTS_DIR}/RATreeView/RATreeView.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/EasyStash.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JWTDecode.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RATreeView.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -254,13 +286,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04D0825A2392DAC600535F11 /* DataObject.swift in Sources */,
 				04343F39232D2B2C00C39219 /* ViewController.swift in Sources */,
 				0450AF872380C0530052CBAD /* RegistrationCompleteViewController.swift in Sources */,
 				0450AF802370D1AC0052CBAD /* SelectionViewController.swift in Sources */,
 				0450AF8E238B25070052CBAD /* UserData.swift in Sources */,
 				0450AF8C238731790052CBAD /* REST.swift in Sources */,
+				04D082582392D6FC00535F11 /* TreeTableViewCell.swift in Sources */,
 				0450AF89238727CB0052CBAD /* AuthData.swift in Sources */,
+				04D0825E2392E13900535F11 /* TreeViewController.swift in Sources */,
 				04343F37232D2B2C00C39219 /* AppDelegate.swift in Sources */,
+				04D082552392C40D00535F11 /* DashboardController.swift in Sources */,
 				0450AF852380A5960052CBAD /* RegistrationViewController.swift in Sources */,
 				0450AF90238C86AB0052CBAD /* Alert.swift in Sources */,
 				04343F49232D34F100C39219 /* DesignableView.swift in Sources */,
@@ -449,6 +485,79 @@
 			};
 			name = Release;
 		};
+		04D0824E2392A84C00535F11 /* Development */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Development;
+		};
+		04D0824F2392A84C00535F11 /* Development */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1E9E862E32A018DEE295FF19 /* Pods-thesis.development.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = thesis/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = mac.thesis;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Development;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -457,18 +566,20 @@
 			buildConfigurations = (
 				04343F43232D2B2D00C39219 /* Debug */,
 				04343F44232D2B2D00C39219 /* Release */,
+				04D0824E2392A84C00535F11 /* Development */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Development;
 		};
 		04343F45232D2B2D00C39219 /* Build configuration list for PBXNativeTarget "thesis" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				04343F46232D2B2D00C39219 /* Debug */,
 				04343F47232D2B2D00C39219 /* Release */,
+				04D0824F2392A84C00535F11 /* Development */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Development;
 		};
 /* End XCConfigurationList section */
 	};
