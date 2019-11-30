@@ -1,11 +1,7 @@
 import Foundation
 
 func backendURL() -> String {
-#if RELEASE
     return "https://diet-thesis.herokuapp.com/"
-#else
-    return "http://127.0.0.1:5000/"
-#endif
 }
 
 func post(method:String, endPoint: String, postData: [String:Any], completion: @escaping (NSDictionary?, Int?) -> ()) {
