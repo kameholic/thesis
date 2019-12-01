@@ -24,10 +24,12 @@ class UserData {
     
     struct Recipe : Codable {
         let name: String
+        let portion: Double
         let description: String
         
-        public init(name: String, description: String) {
+        public init(name: String, portion: Double, description: String) {
             self.name = name
+            self.portion = portion
             self.description = description
         }
     }
@@ -46,6 +48,7 @@ class UserData {
     var age: Int
     var lifestyle: String
     var weight: Double
+    var height: Double
     var allergies: [Allergy]
     var diet: Diet
     
@@ -54,6 +57,7 @@ class UserData {
         age = 0
         lifestyle = ""
         weight = 0
+        height = 0
         allergies = [Allergy]()
         diet = Diet()
     }

@@ -20,6 +20,7 @@ def test_save_and_get_user_info(test_client):
         'gender': 'male',
         'age': 20,
         'weight': 65,
+        'height': 175,
         'lifestyle': 'sitting',
         'allergies': [1000, 1001]
     }
@@ -41,6 +42,7 @@ def test_default_user_info(test_client):
         'gender': None,
         'age': None,
         'weight': None,
+        'height': None,
         'lifestyle': None,
         'allergies': []
     })
@@ -53,6 +55,7 @@ def test_without_auth_headers_fails(test_client):
         'gender': 'male',
         'age': 20,
         'weight': 65,
+        'height': 65,
         'lifestyle': 'sitting',
         'allergies': [1000, 1001]
     }
@@ -75,6 +78,7 @@ def test_save_bad_params(test_client):
         'gender': 'bad',
         'age': -10,
         'weight': -30,
+        'height': -30,
         'lifestyle': 'bad',
         'allergies': 100
     }
@@ -89,6 +93,7 @@ def test_save_bad_params(test_client):
         'gender': 'male',
         'age': -10,
         'weight': -30,
+        'height': -30,
         'lifestyle': 'sitting',
         'allergies': 100
     }
@@ -99,4 +104,5 @@ def test_save_bad_params(test_client):
     assert(response.status_code == 400)
     assert('age' in message)
     assert('weight' in message)
+    assert('height' in message)
     assert('allergies' in message)

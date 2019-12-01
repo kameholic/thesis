@@ -11,23 +11,25 @@ import Foundation
 
 class DataObject
 {
-    let name : String
-    var children : [DataObject]
+    let name: String
+    let details: String
+    var children: [DataObject]
     
-    init(name : String, children: [DataObject]) {
+    init(name: String, children: [DataObject], details: String = "") {
         self.name = name
         self.children = children
+        self.details = details
     }
     
     convenience init(name : String) {
         self.init(name: name, children: [DataObject]())
     }
     
-    func addChild(_ child : DataObject) {
+    func addChild(_ child: DataObject) {
         self.children.append(child)
     }
     
-    func removeChild(_ child : DataObject) {
+    func removeChild(_ child: DataObject) {
         self.children = self.children.filter( {$0 !== child})
     }
 }

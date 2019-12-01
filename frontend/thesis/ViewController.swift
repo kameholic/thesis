@@ -50,6 +50,7 @@ class ViewController: UIViewController {
                         print(AuthData.shared.accessToken)
                         self.pullAllergies()
                         self.pullData()
+                        generateDiet(controller: self, method: "GET", endPoint: "generate_diet", postString: "")
                         DispatchQueue.main.async {
                             self.performSegue(withIdentifier: "segueLogin", sender: self)
                         }
@@ -119,12 +120,14 @@ class ViewController: UIViewController {
                         let gender = message["gender"] as? String,
                         let lifestyle = message["lifestyle"] as? String,
                         let weight = message["weight"] as? Double,
+                        let height = message["height"] as? Double,
                         let allergies = message["allergies"] as? [Int] {
 
                         UserData.shared.age = age
                         UserData.shared.gender = gender.capitalized
                         UserData.shared.lifestyle = lifestyle.capitalized
                         UserData.shared.weight = weight
+                        UserData.shared.height = height
                         
                         for (id) in allergies {
                             for index in 0..<UserData.shared.allergies.count {
@@ -158,12 +161,14 @@ class ViewController: UIViewController {
                     let age = try storage.load(forKey: "age", as: Int.self)
                     let lifestyle = try storage.load(forKey: "lifestyle", as: String.self)
                     let weight = try storage.load(forKey: "weight", as: Double.self)
+                    let height = try storage.load(forKey: "height", as: Double.self)
                     let allergies = try storage.load(forKey: "allergies", as: [UserData.Allergy].self)
                     let diet = try storage.load(forKey: "diet", as: UserData.Diet.self)
                     UserData.shared.age = age
                     UserData.shared.gender = gender
                     UserData.shared.lifestyle = lifestyle
                     UserData.shared.weight = weight
+                    UserData.shared.height = height
                     UserData.shared.allergies = allergies
                     UserData.shared.diet = diet
                     
@@ -175,6 +180,7 @@ class ViewController: UIViewController {
                 print(AuthData.shared.accessToken)
                 if AuthData.shared.accessTokenIsValid() {
                     self.pullData()
+                    generateDiet(controller: self, method: "GET", endPoint: "generate_diet", postString: "")
                     self.performSegue(withIdentifier: "segueLogin", sender: self)
                 }
             } catch {

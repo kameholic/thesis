@@ -46,8 +46,9 @@ class TreeViewController: UIViewController, RATreeViewDelegate, RATreeViewDataSo
         for day in UserData.shared.diet.days {
             var dayData = [DataObject]()
             for dine_type in ["breakfast", "lunch", "dinner"] {
-                let recipe = DataObject(name: day[dine_type]!.name)
-                dayData.append(DataObject(name: dine_type.capitalized, children: [recipe]))
+                let recipe = DataObject(name: day[dine_type]!.name, children: [], details: day[dine_type]!.description)
+                let name = "\(dine_type.capitalized) \(day[dine_type]!.portion) portions of "
+                dayData.append(DataObject(name: name, children: [recipe]))
             }
             data.append(DataObject(name: "Day \(String(i))", children: dayData))
             i += 1
@@ -89,9 +90,9 @@ class TreeViewController: UIViewController, RATreeViewDelegate, RATreeViewDataSo
         let item = item as! DataObject
         
         let level = treeView.levelForCell(forItem: item)
-        let detailsText = "Number of children \(item.children.count)"
+//        let detailsText = "Number of children \(item.children.count)"
         cell.selectionStyle = .none
-        cell.setup(withTitle: item.name, detailsText: detailsText, level: level, additionalButtonHidden: false)
+        cell.setup(withTitle: item.name, detailsText: item.details, level: level, additionalButtonHidden: false)
         cell.additionButtonActionBlock = { [weak treeView] cell in
             guard let treeView = treeView else {
                 return;

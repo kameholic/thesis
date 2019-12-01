@@ -1,5 +1,9 @@
+from model.database import db
+
+
 class Recipe(object):
     def __init__(self):
+        self.id = ''
         self.name = ''
         self.protein = 0
         self.fat = 0
@@ -8,9 +12,32 @@ class Recipe(object):
         self.type = ''
         self.description = ''
         self.allergies = []
-        
 
-# Each day is a list of recipes
-class Diet(object):
-    def __init__(self):
-        self.days = []
+
+class DietDay(db.Model):
+    __tablename__ = 'diet_day'
+
+    id = db.Column(db.Integer, primary_key=True)
+    diet_id = db.Column(db.Integer, db.ForeignKey('diet.id'))
+    is_complex = db.Column(db.Boolean)
+    breakfast = db.Column(db.String(128))
+    lunch = db.Column(db.String(128))
+    dinner = db.Column(db.String(128))
+    breakfast_portion = db.Column(db.Float)
+    lunch_portion = db.Column(db.Float)
+    dinner_portion = db.Column(db.Float)
+
+    def __init__(self, is_complex, breakfast, lunch, dinner):
+        self.is_complex = is_complex
+        self.breakfast = breakfast
+        self.lunch = lunch
+        self.dinner = dinner
+
+
+# Each day is a dict of recipes
+class Diet(db.Model):
+    __tablename__ = 'diet'
+
+    id = db.Column(db.Integer, primary_key=True)
+    days = db.relationship("DietDay")
+    user_id = db.Column(db.Integer, db.ForeignKey('user.id'))

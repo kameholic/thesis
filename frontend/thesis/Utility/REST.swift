@@ -2,6 +2,7 @@ import Foundation
 
 func backendURL() -> String {
     return "https://diet-thesis.herokuapp.com/"
+//    return "http://127.0.0.1:5000/"
 }
 
 func post(method:String, endPoint: String, postData: [String:Any], completion: @escaping (NSDictionary?, Int?) -> ()) {

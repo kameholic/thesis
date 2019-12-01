@@ -13,6 +13,7 @@ class SelectionViewController: UIViewController, UIPickerViewDelegate, UIPickerV
 
     @IBOutlet weak var ageTextField: UITextField!
     @IBOutlet weak var weightTextField: UITextField!
+    @IBOutlet weak var heightTextField: UITextField!
     
     @IBOutlet weak var genderTextField: UITextField!
     @IBOutlet weak var lifeStyleTextField: UITextField!
@@ -39,6 +40,7 @@ class SelectionViewController: UIViewController, UIPickerViewDelegate, UIPickerV
         
         ageTextField.text = String(UserData.shared.age)
         weightTextField.text = String(UserData.shared.weight)
+        heightTextField.text = String(UserData.shared.height)
         genderTextField.text = UserData.shared.gender
         lifeStyleTextField.text = UserData.shared.lifestyle
 
@@ -116,7 +118,8 @@ class SelectionViewController: UIViewController, UIPickerViewDelegate, UIPickerV
         if  let gender = genderTextField.text,
             let lifestyle = lifeStyleTextField.text,
             let ageText = ageTextField.text, let age = Int(ageText),
-            let weightText = weightTextField.text, let weight = Double(weightText)
+            let weightText = weightTextField.text, let weight = Double(weightText),
+            let heightText = heightTextField.text, let height = Double(heightText)
         {
             var allergies: [Int] = []
             for (allergy) in UserData.shared.allergies {
@@ -129,6 +132,7 @@ class SelectionViewController: UIViewController, UIPickerViewDelegate, UIPickerV
                 "lifestyle": lifestyle.lowercased(),
                 "age": age,
                 "weight": weight,
+                "height": height,
                 "allergies": allergies
             ]
             
@@ -143,7 +147,6 @@ class SelectionViewController: UIViewController, UIPickerViewDelegate, UIPickerV
                         }
                     }
                     else {
-                        print("Info saved")
                         do {
                             var options = Options()
                             options.folder = "Users"
@@ -153,9 +156,8 @@ class SelectionViewController: UIViewController, UIPickerViewDelegate, UIPickerV
                             try storage.save(object: UserData.shared.gender, forKey: "gender")
                             try storage.save(object: UserData.shared.lifestyle, forKey: "lifestyle")
                             try storage.save(object: UserData.shared.weight, forKey: "weight")
+                            try storage.save(object: UserData.shared.height, forKey: "height")
                             try storage.save(object: UserData.shared.allergies, forKey: "allergies")
-                            
-                            print("Saved to local database")
                         }
                         catch {
                         }

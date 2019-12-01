@@ -1,6 +1,6 @@
 from controllers.response import Response
 from model.user import User
-from model.diet import Recipe
+from model.diet import Recipe, DietDay, Diet
 import csv
 from random import randrange
 
@@ -43,6 +43,75 @@ def get_recipes():
     return recipes
 
 
+def load_diet(db, user_id):
+    resp = Response()
+    diet = Diet.query.filter_by(id=user_id).first()
+    if diet is None:
+        resp.message = {'diet': None}
+        return resp
+
+    is_complex = diet.days[0].is_complex
+    days = []
+
+    if is_complex:
+        recipes = get_recipes()
+
+        for day in diet.days:
+            day_ = {
+                'breakfast': [],
+                'lunch': [],
+                'dinner': []
+            }
+            for dine_type in ['breakfast', 'lunch', 'dinner']:
+                recipe_list = str_to_list(getattr(day, dine_type))
+                portion = getattr(day, '{}_portion'.format(dine_type))
+                assert(len(recipe_list) == 1)
+
+                for recipe_id in recipe_list:
+                    recipe = next((x for x in recipes if x.id == recipe_id),
+                                  None)
+                    day_[dine_type] = {
+                        'id': recipe_id,
+                        'name': recipe.name,
+                        'portion': portion,
+                        'description': recipe.description
+                    }
+            days.append(day_)
+    else:
+        raise NotImplementedError()
+
+    resp.message = {
+        'diet': days
+    }
+    return resp
+
+
+def save_diet(db, user_id, diet, is_complex):
+    print('Saving diet')
+    db_diet = Diet.query.filter_by(id=user_id).first()
+    if db_diet is None:
+        db_diet = Diet()
+    else:
+        DietDay.query.filter_by(diet_id=db_diet.id).delete()
+    db_diet.user_id = user_id
+    db_diet.days = []
+    for day in diet:
+        if is_complex:
+            breakfast = day['breakfast']['id']
+            lunch = day['lunch']['id']
+            dinner = day['dinner']['id']
+            db_day = DietDay(True, breakfast, lunch, dinner)
+            db_day.breakfast_portion = day['breakfast']['portion']
+            db_day.lunch_portion = day['lunch']['portion']
+            db_day.dinner_portion = day['dinner']['portion']
+            db_diet.days.append(db_day)
+            db.session.add(db_day)
+        else:
+            raise NotImplementedError()
+    db.session.add(db_diet)
+    db.session.commit()
+
+
 def generate_diet(db, user_id, diet_type, goal):
     resp = Response()
 
@@ -55,13 +124,26 @@ def generate_diet(db, user_id, diet_type, goal):
     allergies = str_to_list(user.allergies)
     calories = 0
     W = user.weight
-    H = 175
+    H = user.height
     A = user.age
 
-    if user.gender == 'male':
-        calories = 10 * W + 6.25 * H - 5 * A + 5
+    mult = 0
+    if user.lifestyle == 'sitting':
+        mult = 1.2
+    elif user.lifestyle == 'normal':
+        mult = 1.3
     else:
-        calories = 10 * W + 6.25 * H - 5 * A - 161
+        mult = 1.7
+
+    if user.gender == 'male':
+        calories = 66.5 + (13.8 * W) + (5.0 * H) - (6.8 * A)
+    else:
+        calories = 655 + (9.6 * W) + (1.9 * H) - (4.7 * A)
+    calories = mult * calories
+    if goal == 'lose':
+        calories -= 300
+    elif goal == 'gain':
+        calories += 300
 
     r_carb = 0.4
     r_fat = 0.3
@@ -93,6 +175,12 @@ def generate_diet(db, user_id, diet_type, goal):
         possible_recipes[dine_type] = filtered
         unused[dine_type] = [v for v in filtered]
 
+    r_calories = {
+        'breakfast': 0.25 * calories,
+        'lunch': 0.375 * calories,
+        'dinner': 0.375 * calories
+    }
+
     result = []
     for day in range(0, 7):
         result.append({})
@@ -101,11 +189,18 @@ def generate_diet(db, user_id, diet_type, goal):
                 unused[dine_type] = possible_recipes[dine_type]
             u = unused[dine_type]
             x = randrange(len(u))
+            portion = r_calories[dine_type] / u[x].calories
+            portion = float('{:0.1f}'.format(portion))
             result[day][dine_type] = {
+                'id': u[x].id,
                 'name': u[x].name,
+                'portion': portion,
                 'description': u[x].description
             }
             del u[x]
 
     resp.message = {'diet': result}
+
+    save_diet(db, user_id, result, True)
+
     return resp

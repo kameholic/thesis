@@ -28,6 +28,7 @@
 		04D0825C2392E04500535F11 /* TreeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04D0825B2392E04500535F11 /* TreeTableViewCell.xib */; };
 		04D0825E2392E13900535F11 /* TreeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D0825D2392E13900535F11 /* TreeViewController.swift */; };
 		04D082612392E78800535F11 /* Diet.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04D082602392E78800535F11 /* Diet.storyboard */; };
+		04D082632394415E00535F11 /* Diet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D082622394415E00535F11 /* Diet.swift */; };
 		D21C435ACB174B0E302DDD57 /* Pods_thesis.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C3B3C887D750D949FBCB997 /* Pods_thesis.framework */; };
 /* End PBXBuildFile section */
 
@@ -55,6 +56,7 @@
 		04D0825B2392E04500535F11 /* TreeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TreeTableViewCell.xib; sourceTree = "<group>"; };
 		04D0825D2392E13900535F11 /* TreeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreeViewController.swift; sourceTree = "<group>"; };
 		04D082602392E78800535F11 /* Diet.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Diet.storyboard; sourceTree = "<group>"; };
+		04D082622394415E00535F11 /* Diet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Diet.swift; sourceTree = "<group>"; };
 		1E9E862E32A018DEE295FF19 /* Pods-thesis.development.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-thesis.development.xcconfig"; path = "Pods/Target Support Files/Pods-thesis/Pods-thesis.development.xcconfig"; sourceTree = "<group>"; };
 		729DFC364C5B2F8B5619E3DF /* Pods-thesis.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-thesis.release.xcconfig"; path = "Pods/Target Support Files/Pods-thesis/Pods-thesis.release.xcconfig"; sourceTree = "<group>"; };
 		8C3B3C887D750D949FBCB997 /* Pods_thesis.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_thesis.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -128,6 +130,7 @@
 			children = (
 				0450AF8B238731790052CBAD /* REST.swift */,
 				0450AF8F238C86AB0052CBAD /* Alert.swift */,
+				04D082622394415E00535F11 /* Diet.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -292,6 +295,7 @@
 				0450AF802370D1AC0052CBAD /* SelectionViewController.swift in Sources */,
 				0450AF8E238B25070052CBAD /* UserData.swift in Sources */,
 				0450AF8C238731790052CBAD /* REST.swift in Sources */,
+				04D082632394415E00535F11 /* Diet.swift in Sources */,
 				04D082582392D6FC00535F11 /* TreeTableViewCell.swift in Sources */,
 				0450AF89238727CB0052CBAD /* AuthData.swift in Sources */,
 				04D0825E2392E13900535F11 /* TreeViewController.swift in Sources */,

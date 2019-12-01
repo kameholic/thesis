@@ -62,6 +62,7 @@ def create_app(config=None):
                                      required=True)
             self.parser.add_argument('age', type=int, required=True)
             self.parser.add_argument('weight', type=float, required=True)
+            self.parser.add_argument('height', type=float, required=True)
             self.parser.add_argument('lifestyle',
                                      choices=('sitting', 'normal', 'active'),
                                      required=True)
@@ -93,6 +94,12 @@ def create_app(config=None):
             self.parser.add_argument('goal',
                                      choices=('lose', 'maintain', 'gain'),
                                      required=True)
+
+        @jwt_required
+        def get(self):
+            user_id = get_jwt_identity()
+            resp = generator.load_diet(db, user_id)
+            return create_response(resp)
 
         @jwt_required
         def post(self):
