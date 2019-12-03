@@ -6,6 +6,7 @@ from flask_jwt_extended import JWTManager, jwt_required, get_jwt_identity
 from controllers import auth, user_info
 from controllers.response import Response
 from model.database import db
+from model.user import User
 from generator import generator
 
 
@@ -118,10 +119,24 @@ def create_app(config=None):
             resp.message = {'allergies': allergies}
             return create_response(resp)
 
+    class Confirm(Resource):
+        def get(self, token):
+            email = auth.decode_token(token)
+            if not email:
+                return 'The confirmation link is invalid or has expired.'
+            user = User.query.filter_by(email=email).first()
+            if user.confirmed:
+                return 'Account already confirmed.'
+            user.confirmed = True
+            db.session.add(user)
+            db.session.commit()
+            return 'You have confirmed your account. Thanks!'
+
     api.add_resource(RegisterUser, '/register')
     api.add_resource(LoginUser, '/login')
     api.add_resource(UserInfos, '/user_infos')
     api.add_resource(Generate, '/generate_diet')
     api.add_resource(Allergies, '/allergies')
+    api.add_resource(Confirm, '/confirm/<token>')
 
     return app

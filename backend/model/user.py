@@ -18,6 +18,7 @@ class User(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     email = db.Column(db.String(128))
     password = db.Column(db.String(128))
+    confirmed = db.Column(db.Boolean)
     gender = db.Column(db.String(128))
     age = db.Column(db.Integer)
     weight = db.Column(db.Float)
@@ -28,6 +29,7 @@ class User(db.Model):
     def __init__(self, email, password):
         self.email = email
         self.password = password
+        self.confirmed = False
         self.gender = None
         self.age = None
         self.weight = None

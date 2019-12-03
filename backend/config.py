@@ -10,9 +10,16 @@ class Config(object):
     """Base configuration."""
     BUNDLE_ERRORS = True
     JWT_SECRET_KEY = 'super-secret'
+    SECRET_KEY = 'super-secret'
     JWT_ERROR_MESSAGE_KEY = 'message'
     JWT_ACCESS_TOKEN_EXPIRES = timedelta(days=7)
     PROPAGATE_EXCEPTIONS = True
+    # E-mail confirmation settings
+    EMAIL_HOST = 'smtp.gmail.com'
+    EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
+    EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')
+    EMAIL_USE_TLS = True
+    EMAIL_PORT = 587
 
 
 class ProdConfig(Config):
