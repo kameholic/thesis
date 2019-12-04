@@ -61,6 +61,8 @@ class TreeViewController: UIViewController, RATreeViewDelegate, RATreeViewDataSo
         treeView = RATreeView(frame: view.bounds)
         treeView.register(UINib(nibName: String(describing: TreeTableViewCell.self), bundle: nil), forCellReuseIdentifier: String(describing: TreeTableViewCell.self))
         treeView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        treeView.estimatedRowHeight = 600
+        treeView.rowHeight = UITableView.automaticDimension
         treeView.delegate = self;
         treeView.dataSource = self;
         treeView.treeFooterView = UIView()
@@ -90,13 +92,14 @@ class TreeViewController: UIViewController, RATreeViewDelegate, RATreeViewDataSo
         let item = item as! DataObject
         
         let level = treeView.levelForCell(forItem: item)
-//        let detailsText = "Number of children \(item.children.count)"
         cell.selectionStyle = .none
         cell.setup(withTitle: item.name, detailsText: item.details, level: level, additionalButtonHidden: false)
         cell.additionButtonActionBlock = { [weak treeView] cell in
             guard let treeView = treeView else {
                 return;
             }
+//            treeView.rowHeight = UITableView.automaticDimension
+//            treeView.estimatedRowHeight = 300
             let item = treeView.item(for: cell) as! DataObject
             let newItem = DataObject(name: "Added value")
             item.addChild(newItem)
@@ -104,31 +107,5 @@ class TreeViewController: UIViewController, RATreeViewDelegate, RATreeViewDataSo
             treeView.reloadRows(forItems: [item], with: RATreeViewRowAnimationNone)
         }
         return cell
-    }
-    
-    //MARK: RATreeView delegate
-    func treeView(_ treeView: RATreeView, commit editingStyle: UITableViewCell.EditingStyle, forRowForItem item: Any) {
-        guard editingStyle == .delete else { return; }
-        let item = item as! DataObject
-        let parent = treeView.parent(forItem: item) as? DataObject
-        
-        let index: Int
-        if let parent = parent {
-            index = parent.children.firstIndex(where: { dataObject in
-                return dataObject === item
-            })!
-            parent.removeChild(item)
-            
-        } else {
-            index = self.data.firstIndex(where: { dataObject in
-                return dataObject === item;
-            })!
-            self.data.remove(at: index)
-        }
-        
-        self.treeView.deleteItems(at: IndexSet(integer: index), inParent: parent, with: RATreeViewRowAnimationRight)
-        if let parent = parent {
-            self.treeView.reloadRows(forItems: [parent], with: RATreeViewRowAnimationNone)
-        }
     }
 }

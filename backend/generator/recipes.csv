@@ -1,34 +1,417 @@
-1,Microwave scrambled eggs,15,15,17,263,breakfast,Microwave scrambled eggs,"63,24,8"
-2,Fruit salad,2,1,40,170,breakfast,Fruit salad,""
-3,Chicken steak with rice and vegetables,53,12,51,537,lunch,Chicken steak with rice and vegetables,23
-4,Waldorf salad,10,11,24,236,dinner,Waldorf salad,42
-5,Ham wrap,25,11,17,257,breakfast,Ham wrap,"63,6"
-6,Strawberry smoothie,8,4,45,229,breakfast,Strawberry smoothie,""
-7,Caprese chicken with basmati rice,64,12,37,519,lunch,Caprese chicken with basmati rice,"23,24"
-8,Fitness salad,14,4,35,236,dinner,Fitness salad,""
-9,Fried egg in pepper,17,20,14,316,breakfast,Fried egg in pepper,""
-10,Vanilla cottage cheese,22,5,6,157,breakfast,Vanilla cottage cheese,""
-11,Chicken spaghetti with creamy peas,35,22,56,560,lunch,Chicken spaghetti with creamy peas,23
-12,Chicken salad,28,8,11,233,dinner,Chicken salad,23
-13,Herb cream cheese with ham,19,11,31,306,breakfast,Herb cream cheese with ham,"21,63"
-14,Blueberry and mulberry smoothie,7,4,37,235,breakfast,Blueberry and mulberry smoothie,""
-15,Chicken with yoghurt sauce and sweet potatoes,44,15,43,488,lunch,Chicken with yoghurt sauce and sweet potatoes,23
-16,Egg salad,12,16,13,239,dinner,Egg salad,""
-17,Mediterrane toast,19,9,33,302,breakfast,Mediterrane toast,24
-18,Cold banana smoothie,2,4,27,147,breakfast,Cold banana smoothie,53
-19,Garlic shrimp in cheese sauce,66,30,12,581,lunch,Garlic shrimp in cheese sauce,6
-20,Tomato cocktail,6,1,25,151,dinner,Tomato cocktail,""
-21,Cottage cheese in pepper with ramsons and toast,23,4,40,283,breakfast,Cottage cheese in pepper with ramsons and toast,""
-22,Berry cup cream,7,4,24,168,breakfast,Berry cup cream,""
-23,Cicken with lemon rosemary,29,28,29,486,lunch,Cicken with lemon rosemary,"23,6"
-24,Spicey zucchini balls,21,16,16,287,dinner,Spicey zucchini balls,6
-25,French toast,22,14,30,333,breakfast,French toast,""
-26,Salmon with mustard and mashed sweet potatoes,23,20,23,370,lunch,Salmon with mustard and mashed sweet potatoes,53
-27,Broccoi salad,29,11,23,308,lunch,Broccoi salad,"58,63"
-28,Turkey soup with lemon,49,26,28,536,lunch,Turkey soup with lemon,""
-29,Peach cream soup with cottage cheese dumplings,32,26,33,506,lunch,Peach cream soup with cottage cheese dumplings,""
-30,Bean soup with vegetables,26,18,58,532,lunch,Bean soup with vegetables,""
-31,Tomato soup with meat balls,49,14,36,477,lunch,Tomato soup with meat balls,23
-32,Potato soup with fried bacon,31,28,51,580,lunch,Potato soup with fried bacon,23
-33,Corn cream soup with fried chicken slices,26,24,44,463,lunch,Corn cream soup with fried chicken slices,63
-34,Chicken soup,24,18,20,409,lunch,Chicken soup,23
+1,Microwave scrambled eggs,15,15,17,263,breakfast,"1,2","Ingredients:
+1 whole egg
+5 g ham
+20 g mozarella
+15 g new onion
+30 g tomatoes
+10 ml milk
+26 g bread (1 piece)
+50 g salad
+5 ml olive oil
+Preparation:
+1. Put oil in a mug.
+2. Cut the vegetables, the ham and the cheese.  
+3. Mix the cut ingedients with the milk, egg, salt and pepper.
+4. Put the mixture into the mug.
+5. Put it into the microwave for 3 minutes.
+6. Serve it with the bread."
+2,Summer fruit salad,2,1,40,170,breakfast,,"Ingredients:
+100 g strawberry
+100 g peaces
+100 g green apple
+50 g grapes
+50 g blueberry
+lemon juice
+Preparation:
+1. Put everything but the mint into a bowl and mix them.
+2. Serve it with mint."
+3,Chicken breast steak with rice and vegetables,53,12,51,537,lunch,,"Ingredients:
+200 g chicken
+50 g basmati rice
+60 g carrot
+30 g peas
+30 g broccoli
+60 g tomatoes
+10 ml oive oil
+10 g curcuma
+Preparation:
+1. Cook the rice.  
+2. Steam the vegetables.  
+3. Mix the vegetables and the rice.   
+4. Slice the chicken and season them with the spices.
+5. Put oil into a pan.
+6. Fry the chicken.       
+7. Serve the rice-vegetable mixture together with the fried chicken."
+4,Waldorf salad,10,11,24,236,dinner,"1,3","Ingredients:
+80 g salad
+80 g celery
+80 g green apple
+200 ml yoghurt
+6 g cashews
+10 g mustard
+lemon juice
+Preparation:
+1. Cut the fruits and vegetables into smaller pieces.
+2. Mix the vegetables.     
+3. Mix the yoghurt with the spices and the lemon juice.  
+4. Serve the vegetables with the yoghurt dressing and put cashews on the top."
+5,Ham wrap,25,11,17,257,breakfast,"5,1","Ingredients:
+1 tortilla
+70 g ham
+50 g tomato
+50 g cucumber
+2 slices of trappist
+10 ml oil
+Preparation:
+1. Lie down the tortilla.
+2. Cut the vegetabes, the ham and the cheese into tiny pieces.
+3. Season it with the olive oil and some salt.
+4. Wrap it up."
+6,Strawberry smoothie,8,4,45,229,breakfast,1,"Ingredients
+30 g banana
+150 g strawberries
+200 ml yoghurt
+Preparation:
+1. Cut the fruits into small pieces.
+2. Put them into a blender and mix it with the yoghurt.
+3. Blend them until it's creamy enough."
+7,Caprese chicken with basmati rice,64,12,37,519,lunch,1,"Ingredients:
+200 g chicken
+5 ml oil
+50 g mozarella
+50 g tomatoes
+40 g basmati rice
+Preparation:
+1. Slice the chicken.
+2. Meanwhile cook the rice.
+3. Preheat the ovven to 200 degrees.
+4. Slice the tomatoes and put them onto the sliced chicken.
+5. Pour some olive oil on top of it.
+6. Bake for 20 minutes.
+7. Put the mozarella on top of the chicken.
+8. Bake for another 10 minutes.
+9. Season with salt and pepper.
+"
+8,Fitness salad,14,4,35,236,dinner,1,"Ingredients:
+100 g saad
+50 g tomatoes
+150 g cucumber
+150 g pepper
+70 g corn
+100 ml yoghurt
+Preparation:
+1. Cut all the vegetables into smal pieces.
+2. Mix them with the yoghurt.
+3. Season it with parsley and dill."
+9,Fried egg in pepper,17,20,14,316,breakfast,2,"Ingredients:
+2 whole eggs
+20 g Californian pepper
+15 ml olive oil
+3 slices of Finn Crisp
+Preparation:
+1. Preheat the oven for 200 degrees.
+2. Cut one big Californian pepper in half and pour the olive oil into it.
+3. Put the egg into the pepper.
+4. Season with salt and pepper.
+5. Bake for 15 minutes.
+6 .Serve with the Finn Crisps.
+"
+10,Vanilla cottage cheese,22,5,6,157,breakfast,1,"Ingredients:
+150 g cottage cheese
+20 m yoghurt
+1 stick of vanila
+peel of 1 lemon
+eritrit
+Preparation:
+1. Put all the ingredients into a blender and blend them until creamy enough.
+2. If not sweet enough, pour some eritrit into the cream."
+11,Chicken spaghetti with creamy peas,35,22,56,560,lunch,"1,5","Ingredients:
+50 g durum pasta
+100 g chicken
+60 g peas
+50 ml cream
+garllic as needed
+50 g onion
+15 ml olive oil
+10 g mustard
+Preparation:
+1. Cook the pasta.
+2. Meanwhile cut the chicken.
+3. Put olive oil into a pan.
+4. Start baking the chicken with the garlic, onion and peas, and season it with salt and pepper.
+5. When almost ready, put th cream into it.
+6. Mix the mustard into it.
+7. Serve this saucy chicken on top of the pasta."
+12,Chicken salad,28,8,11,233,dinner,1,"Ingredients:
+100 g chicken
+50 g salad
+100 g tomatoes
+50 g cucumber
+50 ml yoghurt
+10 ml olive oil
+Preparation:
+1. Cook the chicken.
+2. Cut the vegetables into small pieces.
+3. Cut the chicken too.
+4. Mix everything together.
+"
+13,Herb cream cheese with ham,19,11,31,306,breakfast,"1,5","Ingredients:
+60 g bread with rye flour
+40 g herb cream cheese
+50 g ham
+50 g red Californian pepper
+100 g cucumber
+Preparation:
+1. Toast the bread.
+2. Put the cream cheese and the ham onto the toast.
+3. Serve with cucumber and pepper.
+"
+14,Blueberry and mulberry smoothie,7,4,37,235,breakfast,1,"Ingredients:
+100 g blueberry
+100 g mulberry
+150 ml orange juice
+150 ml yoghurt
+5 g honey
+Preparation:
+1. Cut the fruits into small pieces if needed.
+2. Put them into a blender and mix it with the yoghurt, honey and orange juice.
+3. Blend them until it's creamy enough."
+15,Chicken with yoghurt sauce and sweet potatoes,44,15,43,488,lunch,1,"150 g chicken
+100 ml yoghurt
+150 g tomatoes
+100 g cucumber
+150 g sweet potatoes
+1 piece of garlic
+5 ml of olive oil
+Preparation:
+1. Cut the chicken and vegetables.
+2. Put the oil into a pan.
+3. Start frying the chicken with the garlic and tomatoes and season with salt and pepper.
+4. Meanwhile start doing the cucumber salad: cut the cucumber and put the yoghurt onto it.
+5. In another pan bake the sweet potatoes.
+6. when everything baked, serve them together."
+16,Egg salad,12,16,13,239,dinner,"1,2","Ingredients:
+1 whole egg
+100 ml yoghurt
+5 g light mayonnaise
+30 g turnip
+50 g red onion
+5 ml lemon juice
+5 ml mustard
+5 ml olive oil
+Preparation:
+1. Cut everything into small pieces.
+2. Mix everything together.
+"
+17,Mediterrane toast,19,9,33,302,breakfast,"1,5","Ingredients:
+50 g bread
+30 g Philadelphia cream cheese
+75 g red Caifornian pepper
+15 g new onion
+50 g mozarella
+150 g tomatoes
+Preparation:
+1. Toast the bread.
+2. Meanwhile cut the vegetables.
+3. Put the cream onto the toast and serve with the vegetabes."
+18,Cold banana smoothie,2,4,27,147,breakfast,,"Ingredients:
+118 g banana (1 medium sized)
+300 ml almond milk
+10 g eritrit
+Preparation:
+1. Cut the banana into small pieces.
+2. Put itinto a blender and mix it with the almond milk and the eritrit.
+3. Blend them until it's creamy enough."
+19,Garlic shrimp in cheese sauce,66,30,12,581,lunch,1,"Ingredients:
+200 g shrimp
+200 g broccoli
+80 g trappist
+5 pieces of garlic
+10 ml oive oil
+300 ml almond milk
+Preparation:
+1. Put the oil into a pan and start cooking the shrimp with the garlic.
+2. After a few minutes put the broccoli in it.
+3. When almost ready, pour the amon dmilk nd the trappist into the pan and mix them.
+4. Cook until soft enough.
+5. Season with salt a pepper."
+20,Tomato cocktail,6,1,25,151,dinner,,"Ingredients:
+300 ml concentrated tomato
+100 ml water
+2 pieces of Finn Crisp
+Preparation:
+1. Put the tomato and the water in a blender.
+2. Put some oregano, basil, salt and pepper into it.
+3. Blend until well mixed."
+21,Cottage cheese in pepper with ramsons and toast,23,4,40,283,breakfast,"1,5","Ingredients:
+100 g cottage cheese
+2 pieces of yellow pepper
+70 g whole wheat bread
+Preparation:
+1. Cut the pepper into half.
+2. mix the cottage cheese with some rmsons, salt and pepper and put it into the yellow pepper.
+3. Serve it with the bread."
+22,Berry cup cream,7,4,24,168,breakfast,"1,5","Ingredients:
+100 mll yoghurt
+100 g frozen berries
+10 g eritrit
+5 pieces of Korpovit
+Preparation:
+1. Mash haf of the Korpovit into a cup.
+2. Pour half of the yoghurt onto it.
+3. Put the berries on top of them.
+4. Repeat 1-3.
+5. Use some eritrit in the yoghurt if needed."
+23,Cicken with lemon rosemary,29,28,29,486,lunch,,"Ingredients:
+100 g chicken
+10 ml olive oil
+3 pieces of garlic
+1 lemon
+100 g red potato
+100 g tomatoes
+5 ml vinegar
+Preparation:
+1. Slice the chicken and mix it with the garlic and potatoes.
+2 .Fry them on the olive oil and squeeze some lemon juice on top of it.
+3. Meanwhile chop the tomatoes and mix it with vinegar and salt.
+4. Serve them together."
+24,Spicey zucchini balls,21,16,16,287,dinner,"1,2,5","Ingredients:
+200 g zucchini
+2 pieces of garlic
+1 whole egg
+30 g trappist
+5 ml olive oil
+10 g whole wheat bread crumbs
+Preparation:
+1. Cut the zucchini and trappist into small pieces.
+2. Mix it with egg, bread crumbs, garlic, salt and pepper.
+3. Form little bals and fry them on olive oil for 10 minutes."
+25,French toast,22,14,30,333,breakfast,"1,2,5","Ingredients:
+60 g toast
+1 whole egg
+5 ml olive oil
+26 g light trappist
+50 g tomatoes
+Preparation:
+1. Mix egg and salt in a bowl.
+2. Put oil into a pan.
+3. Soak the bred in the egg and then put it into the pan.
+4. After 2 minutes, turn the toast.
+5. Serve it with tomatoes and trappist."
+26,Salmon with mustard and mashed sweet potatoes,23,20,23,370,lunch,4,"Ingredients:
+100 g salmon
+15 ml olive oil
+5 g mustard
+1 piece of garlic
+100 g sweet potatoes
+50 ml almond milk
+Preparation:
+1. Start cooking the sweet potatoes.
+2. When they are soft, put them into a blender with the milk and blend it until it's like mashed potatoes.
+3. Meanwhile fry the salmon on the oil.
+4. Serve them togther with mustard."
+27,Broccoi salad,29,11,23,308,lunch,"1,3","Ingredients:
+100 g broccoli
+100 g apple
+10 g peanut
+100 ml yogurt
+100 g ham
+Preparation:
+1. Cut all the vegetables and mix them in a bowl.
+2. Pour it with the yoghurt.
+3. Serve it with the peanuts."
+28,Turkey soup with lemon,49,26,28,536,lunch,1,"Ingredients:
+150 g turkey
+80 g peas
+100 g green bens
+60 g carrot
+100 ml cream
+10 ml olive oil
+400 ml vegetable broth
+half lemon
+Preparation:
+1. Cut the turkey and the vegetables into small pieces.
+2. Wash them and put everything into a big bowl with salt, pepper and bay.
+3. Fill pot with water until everything is covered.
+4. Cook until everything is soft enough."
+29,Peach cream soup with cottage cheese dumplings,32,26,33,506,lunch,"1,2,5","Ingredients:
+150 g peach
+100 ml water
+10 g eritrit
+50 ml cream
+150 g cottage cheese
+1 whole egg
+10 g semolina
+Preparation:
+1. Cook peaches with the cream until blended smoothly.
+2. In another bowl, mix cottage cheese, egg, eritrit and semolina.
+3. After mixing, form balls and put them into boiling water.
+4. When they come onto the top, take them out and put them into the peach cream soup."
+30,Bean soup with vegetables,26,18,58,532,lunch,1,"Ingredients:
+100 g beans
+100 g carrot
+100 g turnip
+50 g onion
+10 g sour cream
+10 ml olive oil
+Preparation:
+1. Cut the vegetables into small pieces.
+2. Fry onion on olive oil for a minute, then add the vegetables.
+3. Fill pot until everything is covered.
+4. Cook until everything is soft enugh."
+31,Tomato soup with meat balls,49,14,36,477,lunch,"1,2,5","Ingredients:
+150 g minced chicken
+50 g onion
+1 whole egg
+20 g semoina
+150 ml 100% tomato juice
+15 g whole wheat rye flour
+300-400 ml water
+Preparation:
+1. Mix the chicken with the onion, egg, semiona and flour.
+2. Pour the tomato juice with the water into a pot and start boiling.
+3. Put some salt and pepper into it.
+4. When boiling, form small meat balls nd start cooking them.
+5. When they come up on top, serve it."
+32,Potato soup with fried bacon,31,28,51,580,lunch,1,"Ingredients:
+200 g potato
+50 g chicken
+50 g bacon
+100 ml yoghurt
+75 g new onion
+20 g parsley
+Preparation:
+1. Cut the chicken, potato and onion into small pieces.
+2. Fry them on some olive oil with the bacon.
+3. After a few minutes, fill the pot with water to cover everything.
+4. Put some parsly and salt in there and cook until soft enough.
+5. 2 minutes before it's ready, mix the yoghurt with the soup and boil for another 2 minutes.
+"
+33,Corn cream soup with fried chicken slices,26,24,44,463,lunch,1,"Ingredients:
+150 g corn
+50 g onion
+1 piece of garlic
+500 ml vegetable broth
+10 ml sour cream
+100 g chicken
+10 ml olive oil
+Preparation:
+1. Cut the chicken, onion and garlic into smal pieces.
+2. Start frying them on olive oi.
+3. After 5 minutes, pour the vegetable broth onto the meat with the corn.
+4. Cook until meat is soft.
+5. Put the sour cream into it and boil for another 2 minutes."
+34,Chicken soup,24,18,20,409,lunch,5,"Ingredients:
+80 g chicken
+60 g carrot
+30 g peas
+100 g potatoes
+10 ml olive oil
+10 g oat flour
+10 g sweet pepper
+Preparation:
+1. Cut the chicken and the vegetables into small pieces.
+2. Fry them together on olive oil.
+3. After 5 minutes, fill it up with water and cook everything together until soft enough.
+4. Condense it witht he flour with fast stirring.
+5. Boil for 2 minutes and serve."

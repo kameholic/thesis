@@ -22,7 +22,14 @@ class TreeTableViewCell : UITableViewCell {
     
     func setup(withTitle title: String, detailsText: String, level : Int, additionalButtonHidden: Bool) {
         customTitleLabel.text = title
+//        print("detailsLabel \(detailsLabel.text!)")
+//        detailsLabel.textRect(forBounds: CGRect(x: 0, y: 0, width: 320, height: 9999), limitedToNumberOfLines: 20)
+//        detailsLabel.lineBreakMode = .byWordWrapping
+//        detailsLabel.numberOfLines = 0
         detailsLabel.text = detailsText
+        detailsLabel.numberOfLines = 0
+//        self.frame.size.height = detailsLabel.intrinsicContentSize.height;
+//        detailsLabel.sizeToFit()
         
         let backgroundColor: UIColor
         if level == 0 {

@@ -1,6 +1,6 @@
 from controllers.response import Response
 from model.user import User
-from model.diet import Recipe, DietDay, Diet
+from model.diet import Recipe, Ingredient, DietDay, Diet
 import csv
 from random import randrange
 
@@ -17,11 +17,29 @@ def str_to_list(values):
 
 def get_allergies():
     allergies = {}
+    with open('generator/allergens.csv') as csvfile:
+        reader = csv.reader(csvfile, delimiter=',', quotechar='\"')
+        for row in reader:
+            allergies[int(row[0])] = row[1]
+    return allergies
+
+
+def get_ingredients():
+    ingredients = {}
     with open('generator/myfooddata.csv') as csvfile:
         reader = csv.reader(csvfile, delimiter=',', quotechar='\"')
         for row in reader:
-            allergies[int(row[0])] = row[2]
-    return allergies
+            ingredient = Ingredient()
+            ingredient.id = int(row[0])
+            ingredient.group = row[1]
+            ingredient.name = row[2]
+            ingredient.protein = float(row[3])
+            ingredient.fat = float(row[4])
+            ingredient.carb = float(row[5])
+            ingredient.calories = float(row[6])
+            ingredient.allergies = str_to_list(row[7])
+            ingredients[ingredient.id] = ingredient
+    return ingredients
 
 
 def get_recipes():
@@ -37,8 +55,8 @@ def get_recipes():
             recipe.carb = float(row[4])
             recipe.calories = float(row[5])
             recipe.type = row[6]
-            recipe.description = row[7]
-            recipe.allergies = str_to_list(row[8])
+            recipe.allergies = str_to_list(row[7])
+            recipe.description = row[8]
             recipes.append(recipe)
     return recipes
 
@@ -87,7 +105,6 @@ def load_diet(db, user_id):
 
 
 def save_diet(db, user_id, diet, is_complex):
-    print('Saving diet')
     db_diet = Diet.query.filter_by(id=user_id).first()
     if db_diet is None:
         db_diet = Diet()
@@ -118,6 +135,19 @@ def generate_diet(db, user_id, diet_type, goal):
     user = User.query.filter_by(id=user_id).first()
     if user is None:
         resp.add_error('user_id', 'not found')
+        return resp
+
+    if user.gender is None:
+        resp.add_error('gender', 'is not set')
+    if user.age is None:
+        resp.add_error('age', 'is not set')
+    if user.weight is None:
+        resp.add_error('weight', 'is not set')
+    if user.height is None:
+        resp.add_error('height', 'is not set')
+    if user.lifestyle is None:
+        resp.add_error('lifestyle', 'is not set')
+    if len(resp.errors) > 0:
         return resp
 
     recipes = get_recipes()
@@ -186,7 +216,7 @@ def generate_diet(db, user_id, diet_type, goal):
         result.append({})
         for dine_type in ['breakfast', 'lunch', 'dinner']:
             if len(unused[dine_type]) == 0:
-                unused[dine_type] = possible_recipes[dine_type]
+                unused[dine_type] = [v for v in possible_recipes[dine_type]]
             u = unused[dine_type]
             x = randrange(len(u))
             portion = r_calories[dine_type] / u[x].calories

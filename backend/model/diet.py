@@ -14,6 +14,18 @@ class Recipe(object):
         self.allergies = []
 
 
+class Ingredient(object):
+    def __init__(self):
+        self.id = ''
+        self.group = ''
+        self.name = ''
+        self.protein = 0
+        self.fat = 0
+        self.carb = 0
+        self.calories = 0
+        self.allergies = []
+
+
 class DietDay(db.Model):
     __tablename__ = 'diet_day'
 
