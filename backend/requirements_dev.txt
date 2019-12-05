@@ -5,4 +5,4 @@ flask_sqlalchemy
 Flask-Script
 Flask-Migrate
 gunicorn
-psycopg2
+pytest

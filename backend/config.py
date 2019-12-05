@@ -47,3 +47,4 @@ class TestConfig(Config):
     TEST_DATABASE_URI = 'sqlite:///' + TESTDB_PATH
     SQLALCHEMY_DATABASE_URI = TEST_DATABASE_URI
     TESTING = True
+    CONFIRM_REQUIRED = False

@@ -44,9 +44,11 @@ def create_app(config=None):
     migrate = Migrate(app, db)
 
     class RegisterUser(Resource):
+        CONFIRM_REQUIRED = True
+
         def post(self):
             args = auth_parser.parse_args()
-            resp = auth.register_user(db, args)
+            resp = auth.register_user(db, args, CONFIRM_REQUIRED)
             return create_response(resp)
 
     class LoginUser(Resource):
@@ -131,6 +133,9 @@ def create_app(config=None):
             db.session.add(user)
             db.session.commit()
             return 'You have confirmed your account. Thanks!'
+
+    CONFIRM_REQUIRED = app.config.get('CONFIRM_REQUIRED') or True
+    RegisterUser.CONFIRM_REQUIRED = CONFIRM_REQUIRED
 
     api.add_resource(RegisterUser, '/register')
     api.add_resource(LoginUser, '/login')

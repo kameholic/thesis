@@ -6,7 +6,7 @@ def test_first_register_succeeds(client):
                          {'email': 'test', 'password': 'test'})
     assert(response.status_code == 200)
     assert(response_json(response) == {
-        'message': 'Successfully registered'
+        'message': 'Successfully registered, please confirm in your e-mail'
     })
 
 

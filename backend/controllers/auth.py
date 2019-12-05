@@ -40,7 +40,6 @@ def decode_token(token, expiration=3600):
 def send_email(email):
     token = encode_token(email)
     confirm_url = generate_url('confirm', token)
-    print(confirm_url)
 
     from email.mime.multipart import MIMEMultipart
     from email.mime.text import MIMEText
@@ -65,7 +64,7 @@ def send_email(email):
     mailServer.close()
 
 
-def register_user(db, args):
+def register_user(db, args, confirm_required):
     resp = Response()
     email = args.get('email', None)
     password = args.get('password', None)
@@ -74,11 +73,14 @@ def register_user(db, args):
         resp.add_error('email', 'email is already taken')
         return resp
     user = User(email, hash_password(password))
-    try:
-        send_email(email)
-    except smtplib.SMTPRecipientsRefused:
-        resp.add_error('email', '%s is not a valid address' % email)
-        return resp
+    if confirm_required:
+        try:
+            send_email(email)
+        except smtplib.SMTPRecipientsRefused:
+            resp.add_error('email', '%s is not a valid address' % email)
+            return resp
+    else:
+        user.confirmed = True
     db.session.add(user)
     db.session.commit()
     resp.message = 'Successfully registered, please confirm in your e-mail'
