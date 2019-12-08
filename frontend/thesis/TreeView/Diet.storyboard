@@ -21,10 +21,44 @@
                         <viewLayoutGuide key="safeArea" id="CnM-VH-Rl5"/>
                     </view>
                     <navigationItem key="navigationItem" id="WXM-nv-rDs"/>
+                    <connections>
+                        <segue destination="ntK-xh-6qX" kind="show" identifier="segueDetails" id="1p3-wP-zeq"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7v3-Z2-ZlE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="410.14492753623193" y="-64.285714285714278"/>
+        </scene>
+        <!--Details Controller-->
+        <scene sceneID="b88-Zj-AFy">
+            <objects>
+                <viewController id="ntK-xh-6qX" customClass="DetailsController" customModule="thesis" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="eSb-KO-nj0">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rNb-Cy-wBi">
+                                <rect key="frame" x="20" y="96" width="374" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="rNb-Cy-wBi" firstAttribute="leading" secondItem="qBS-E5-xi0" secondAttribute="leading" constant="20" id="L9q-Wq-HUg"/>
+                            <constraint firstItem="rNb-Cy-wBi" firstAttribute="top" secondItem="qBS-E5-xi0" secondAttribute="top" constant="8" id="RIe-xC-5Ye"/>
+                            <constraint firstItem="qBS-E5-xi0" firstAttribute="trailing" secondItem="rNb-Cy-wBi" secondAttribute="trailing" constant="20" id="bsC-Dr-EXQ"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="qBS-E5-xi0"/>
+                    </view>
+                    <connections>
+                        <outlet property="detailsLabel" destination="rNb-Cy-wBi" id="D6f-bd-NRv"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ct4-iQ-paj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1324.6376811594205" y="-64.285714285714278"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="J69-b6-bWO">

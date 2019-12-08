@@ -14,6 +14,7 @@ class TreeViewController: UIViewController, RATreeViewDelegate, RATreeViewDataSo
     var treeView : RATreeView!
     var data : [DataObject] = []
     var editButton : UIBarButtonItem!
+    var selectedText: String = ""
     
     convenience init() {
         self.init(nibName : nil, bundle: nil)
@@ -87,6 +88,31 @@ class TreeViewController: UIViewController, RATreeViewDelegate, RATreeViewDataSo
         }
     }
     
+    func treeView(_ treeView: RATreeView, didSelectRowForItem item: Any) {
+        let item = item as! DataObject
+        let level = treeView.levelForCell(forItem: item)
+        print("SELECTED \(item.name)")
+        print("LEVEL \(level)")
+        
+        if level == 2 {
+//            let detailsController = DetailsViewController()
+//            detailsController.detailsText = item.details
+            selectedText = item.details
+            DispatchQueue.main.async {
+                self.performSegue(withIdentifier: "segueDetails", sender: self)
+//                detailsController.performSegueWith(withIdentifier: "segueDetails", sender: self)
+//                self.navigationController?.pushViewController(detailsController, animated: true)
+            }
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "segueDetails" {
+            let dc = segue.destination as! DetailsController
+            dc.detailsText = selectedText
+        }
+    }
+    
     func treeView(_ treeView: RATreeView, cellForItem item: Any?) -> UITableViewCell {
         let cell = treeView.dequeueReusableCell(withIdentifier: String(describing: TreeTableViewCell.self)) as! TreeTableViewCell
         let item = item as! DataObject
@@ -94,18 +120,35 @@ class TreeViewController: UIViewController, RATreeViewDelegate, RATreeViewDataSo
         let level = treeView.levelForCell(forItem: item)
         cell.selectionStyle = .none
         cell.setup(withTitle: item.name, detailsText: item.details, level: level, additionalButtonHidden: false)
-        cell.additionButtonActionBlock = { [weak treeView] cell in
-            guard let treeView = treeView else {
-                return;
-            }
-//            treeView.rowHeight = UITableView.automaticDimension
-//            treeView.estimatedRowHeight = 300
-            let item = treeView.item(for: cell) as! DataObject
-            let newItem = DataObject(name: "Added value")
-            item.addChild(newItem)
-            treeView.insertItems(at: IndexSet(integer: item.children.count-1), inParent: item, with: RATreeViewRowAnimationNone);
-            treeView.reloadRows(forItems: [item], with: RATreeViewRowAnimationNone)
-        }
+        
+        print("level: \(level)")
+//
+//        if level == 2 {
+//            cell.additionButtonActionBlock = { [weak treeView] cell in
+//                print("Taping")
+//                guard let treeView = treeView else {
+//                    return;
+//                }
+//                let detailsController = DetailsViewController()
+//                let item = treeView.item(for: cell) as! DataObject
+//                detailsController.detailsText = item.details
+//                self.navigationController?.pushViewController(detailsController, animated: true)
+//            }
+//        } else {
+//            cell.additionButtonActionBlock = { [weak treeView] cell in
+//                guard let treeView = treeView else {
+//                    return;
+//                }
+//                print("Setting up")
+//                let item = treeView.item(for: cell) as! DataObject
+//                let newItem = DataObject(name: "Added value")
+//                item.addChild(newItem)
+//                treeView.insertItems(at: IndexSet(integer: item.children.count-1), inParent: item, with: RATreeViewRowAnimationNone);
+//                treeView.reloadRows(forItems: [item], with: RATreeViewRowAnimationNone)
+//            }
+//        }
+        
         return cell
     }
 }
+
