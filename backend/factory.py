@@ -48,7 +48,7 @@ def create_app(config=None):
 
         def post(self):
             args = auth_parser.parse_args()
-            resp = auth.register_user(db, args, CONFIRM_REQUIRED)
+            resp = auth.register_user(db, args, RegisterUser.CONFIRM_REQUIRED)
             return create_response(resp)
 
     class LoginUser(Resource):
@@ -84,7 +84,6 @@ def create_app(config=None):
         def post(self):
             user_id = get_jwt_identity()
             args = self.parser.parse_args()
-            print(args)
             resp = user_info.save_user_infos(db, user_id, args)
             return create_response(resp)
 
@@ -109,7 +108,6 @@ def create_app(config=None):
         def post(self):
             user_id = get_jwt_identity()
             args = self.parser.parse_args()
-            print('is complex %s' % str(args['is_complex']))
             resp = generator.generate_diet(db,
                                            user_id,
                                            args['diet_type'],

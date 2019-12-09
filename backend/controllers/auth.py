@@ -65,6 +65,7 @@ def send_email(email):
 
 
 def register_user(db, args, confirm_required):
+    print('confirm_required %s' % confirm_required)
     resp = Response()
     email = args.get('email', None)
     password = args.get('password', None)
