@@ -41,7 +41,7 @@ def create_app(config=None):
     db.init_app(app)
     jwt = JWTManager(app)
     api = Api(app)
-    migrate = Migrate(app, db)
+    migrate = Migrate(app, db, compare_type=True)
 
     class RegisterUser(Resource):
         CONFIRM_REQUIRED = True
