@@ -35,9 +35,9 @@ class DietDay(db.Model):
     breakfast = db.Column(db.String(128))
     lunch = db.Column(db.String(128))
     dinner = db.Column(db.String(128))
-    breakfast_portion = db.Column(db.Float)
-    lunch_portion = db.Column(db.Float)
-    dinner_portion = db.Column(db.Float)
+    breakfast_portion = db.Column(db.String(128))
+    lunch_portion = db.Column(db.String(128))
+    dinner_portion = db.Column(db.String(128))
 
     def __init__(self, is_complex, breakfast, lunch, dinner):
         self.is_complex = is_complex

@@ -30,7 +30,27 @@ def test_client(client):
 def test_diet_format(test_client):
     client_ = test_client
     response = post_json(client_, '/generate_diet',
-                         {'goal': 'maintain', 'diet_type': 'standard'})
+                         {'goal': 'maintain',
+                          'diet_type': 'standard',
+                          'is_complex': True})
+    assert(response.status_code == 200)
+    message = response_message(response)
+    diet = message
+    assert 'diet' in message
+    assert(len(message['diet']) == 7)
+    for day in message['diet']:
+        assert('breakfast' in day)
+        assert('lunch' in day)
+        assert('dinner' in day)
+
+    response = client_.get('/generate_diet')
+    message = response_message(response)
+    assert(message == diet)
+
+    response = post_json(client_, '/generate_diet',
+                         {'goal': 'maintain',
+                          'diet_type': 'standard',
+                          'is_complex': False})
     assert(response.status_code == 200)
     message = response_message(response)
     diet = message

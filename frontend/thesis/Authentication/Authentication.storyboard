@@ -14,7 +14,7 @@
         <scene sceneID="ok1-F1-93t">
             <objects>
                 <viewController storyboardIdentifier="RegistrationSB" useStoryboardIdentifierAsRestorationIdentifier="YES" id="3WF-pq-4vx" customClass="RegistrationViewController" customModule="thesis" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" ambiguous="YES" id="m6W-KG-Mtb">
+                    <view key="view" contentMode="scaleToFill" id="m6W-KG-Mtb">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -202,12 +202,6 @@
                                     <constraint firstAttribute="width" constant="414" id="eCa-cy-SdR"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Registration complete!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="215" translatesAutoresizingMaskIntoConstraints="NO" id="QF3-4O-XVE">
-                                <rect key="frame" x="103" y="245" width="208" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vWD-QR-BeB">
                                 <rect key="frame" x="184" y="311" width="47" height="30"/>
                                 <state key="normal" title="Sign in"/>
@@ -215,6 +209,12 @@
                                     <action selector="logInButton:" destination="8ek-sZ-b2d" eventType="touchUpInside" id="8Yw-6J-T7g"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Successfully registered, please confirm your e-mail!" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="215" translatesAutoresizingMaskIntoConstraints="NO" id="QF3-4O-XVE">
+                                <rect key="frame" x="92" y="242" width="231" height="61"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -223,6 +223,7 @@
                             <constraint firstItem="a2O-hb-eR6" firstAttribute="top" secondItem="pkb-CB-C7g" secondAttribute="topMargin" constant="-31" id="BCa-Bi-UfM"/>
                             <constraint firstItem="QF3-4O-XVE" firstAttribute="leading" secondItem="wuO-Zj-ZX0" secondAttribute="leading" constant="103" id="a7K-5b-aEr"/>
                             <constraint firstItem="wuO-Zj-ZX0" firstAttribute="trailing" secondItem="QF3-4O-XVE" secondAttribute="trailing" constant="103" id="eFA-KO-xA1"/>
+                            <constraint firstItem="QF3-4O-XVE" firstAttribute="leading" secondItem="wuO-Zj-ZX0" secondAttribute="leading" constant="91" id="kE0-w5-rOm"/>
                             <constraint firstItem="vWD-QR-BeB" firstAttribute="leading" secondItem="wuO-Zj-ZX0" secondAttribute="leading" constant="167" id="qEN-0k-zSH"/>
                             <constraint firstItem="QF3-4O-XVE" firstAttribute="top" secondItem="a2O-hb-eR6" secondAttribute="bottom" constant="60" id="yUe-2Q-i1I"/>
                         </constraints>

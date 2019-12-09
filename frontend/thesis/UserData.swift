@@ -35,10 +35,10 @@ class UserData {
     }
     
     struct Diet : Codable {
-        var days: [[String:Recipe]]
+        var days: [[String:[Recipe]]]
         
         public init() {
-            days = [[String:Recipe]]()
+            days = [[String:[Recipe]]]()
         }
     }
     

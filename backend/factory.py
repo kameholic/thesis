@@ -97,6 +97,7 @@ def create_app(config=None):
             self.parser.add_argument('goal',
                                      choices=('lose', 'maintain', 'gain'),
                                      required=True)
+            self.parser.add_argument('is_complex', type=bool, required=True)
 
         @jwt_required
         def get(self):
@@ -108,10 +109,12 @@ def create_app(config=None):
         def post(self):
             user_id = get_jwt_identity()
             args = self.parser.parse_args()
+            print('is complex %s' % str(args['is_complex']))
             resp = generator.generate_diet(db,
                                            user_id,
                                            args['diet_type'],
-                                           args['goal'])
+                                           args['goal'],
+                                           args['is_complex'])
             return create_response(resp)
 
     class Allergies(Resource):
@@ -134,8 +137,9 @@ def create_app(config=None):
             db.session.commit()
             return 'You have confirmed your account. Thanks!'
 
-    CONFIRM_REQUIRED = app.config.get('CONFIRM_REQUIRED') or True
-    RegisterUser.CONFIRM_REQUIRED = CONFIRM_REQUIRED
+    CONFIRM_REQUIRED = app.config.get('CONFIRM_REQUIRED', None)
+    if CONFIRM_REQUIRED is not None:
+        RegisterUser.CONFIRM_REQUIRED = CONFIRM_REQUIRED
 
     api.add_resource(RegisterUser, '/register')
     api.add_resource(LoginUser, '/login')

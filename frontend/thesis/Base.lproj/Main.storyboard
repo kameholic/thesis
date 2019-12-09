@@ -223,38 +223,77 @@
                                     <constraint firstAttribute="height" constant="128" id="p3P-jT-OLp"/>
                                 </constraints>
                             </imageView>
-                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="vSa-iW-g8e">
-                                <rect key="frame" x="149" y="232" width="117.5" height="140.5"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="vSa-iW-g8e">
+                                <rect key="frame" x="20" y="180" width="374" height="200.5"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome back!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VhY-wI-IWi">
-                                        <rect key="frame" x="0.0" y="0.0" width="117.5" height="20.5"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome back!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VhY-wI-IWi">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l7W-UY-EGA">
-                                        <rect key="frame" x="0.0" y="20.5" width="117.5" height="30"/>
+                                        <rect key="frame" x="0.0" y="20.5" width="374" height="30"/>
                                         <state key="normal" title="Preferences"/>
                                         <connections>
                                             <segue destination="BNp-cg-zF7" kind="show" id="6mM-Wf-12L"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B3v-8K-PZg">
-                                        <rect key="frame" x="0.0" y="50.5" width="117.5" height="30"/>
+                                        <rect key="frame" x="0.0" y="50.5" width="374" height="30"/>
                                         <state key="normal" title="View my diet"/>
                                         <connections>
                                             <segue destination="VeI-fb-Ej0" kind="show" id="zRG-bg-oBp"/>
                                         </connections>
                                     </button>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C7l-Ej-Vl0">
+                                        <rect key="frame" x="0.0" y="80.5" width="374" height="60"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Vf6-3d-2Ha">
+                                                <rect key="frame" x="0.0" y="0.0" width="69.5" height="60"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Diet type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XOf-L1-jN7">
+                                                        <rect key="frame" x="0.0" y="0.0" width="69.5" height="39.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Goal" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yOg-ic-DpF">
+                                                        <rect key="frame" x="0.0" y="39.5" width="69.5" height="20.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="9e9-us-B86">
+                                                <rect key="frame" x="69.5" y="0.0" width="304.5" height="60"/>
+                                                <subviews>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jOK-bl-DkO">
+                                                        <rect key="frame" x="0.0" y="0.0" width="304.5" height="30"/>
+                                                        <nil key="textColor"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="K4f-9a-Pez">
+                                                        <rect key="frame" x="0.0" y="30" width="304.5" height="30"/>
+                                                        <nil key="textColor"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oJl-3E-pJu">
-                                        <rect key="frame" x="0.0" y="80.5" width="117.5" height="30"/>
+                                        <rect key="frame" x="0.0" y="140.5" width="374" height="30"/>
                                         <state key="normal" title="New diet"/>
                                         <connections>
                                             <action selector="newDietButton:" destination="g42-gq-tmd" eventType="touchUpInside" id="OzT-32-BCL"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4lF-Y5-Od2" userLabel="Log out">
-                                        <rect key="frame" x="0.0" y="110.5" width="117.5" height="30"/>
+                                        <rect key="frame" x="0.0" y="170.5" width="374" height="30"/>
                                         <state key="normal" title="Log out"/>
                                         <connections>
                                             <action selector="logOutButton:" destination="g42-gq-tmd" eventType="touchUpInside" id="uiK-Pe-pxc"/>
@@ -266,13 +305,20 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="vSa-iW-g8e" firstAttribute="leading" secondItem="bZJ-IG-lAf" secondAttribute="leading" constant="149" id="5co-jq-Uem"/>
+                            <constraint firstItem="bZJ-IG-lAf" firstAttribute="trailing" secondItem="vSa-iW-g8e" secondAttribute="trailing" constant="92.5" id="4Mc-rZ-B5h"/>
+                            <constraint firstItem="vSa-iW-g8e" firstAttribute="leading" secondItem="bZJ-IG-lAf" secondAttribute="leading" constant="20" id="6rP-gi-Ikc"/>
                             <constraint firstItem="73i-0b-sJ3" firstAttribute="leading" secondItem="YyR-lW-jGf" secondAttribute="leading" id="HQH-Vd-ZxC"/>
                             <constraint firstItem="73i-0b-sJ3" firstAttribute="top" secondItem="bZJ-IG-lAf" secondAttribute="top" id="RDS-78-AE9"/>
+                            <constraint firstItem="bZJ-IG-lAf" firstAttribute="trailing" secondItem="vSa-iW-g8e" secondAttribute="trailing" constant="20" id="fMm-lB-SDN"/>
                             <constraint firstItem="vSa-iW-g8e" firstAttribute="top" secondItem="73i-0b-sJ3" secondAttribute="bottom" constant="8" symbolic="YES" id="rNE-kK-L2n"/>
+                            <constraint firstItem="vSa-iW-g8e" firstAttribute="top" secondItem="73i-0b-sJ3" secondAttribute="bottom" constant="8" id="rsw-FD-LWR"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="bZJ-IG-lAf"/>
                     </view>
+                    <connections>
+                        <outlet property="dietTypeTextfield" destination="jOK-bl-DkO" id="CV6-ul-Ynt"/>
+                        <outlet property="goalTextfield" destination="K4f-9a-Pez" id="Akg-FR-5cp"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="E6T-bK-wXc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -47,9 +47,20 @@ class TreeViewController: UIViewController, RATreeViewDelegate, RATreeViewDataSo
         for day in UserData.shared.diet.days {
             var dayData = [DataObject]()
             for dine_type in ["breakfast", "lunch", "dinner"] {
-                let recipe = DataObject(name: day[dine_type]!.name, children: [], details: day[dine_type]!.description)
-                let name = "\(dine_type.capitalized) \(day[dine_type]!.portion) portions of "
-                dayData.append(DataObject(name: name, children: [recipe]))
+                var recipes = [DataObject]()
+                var name = ""
+                if day[dine_type]?.count == 1,
+                    day[dine_type]![0].portion != 1 {
+                    name = "\(dine_type.capitalized) \(day[dine_type]![0].portion) portions of "
+                } else {
+                    name = "\(dine_type.capitalized)"
+                }
+                for (r) in day[dine_type]! {
+                    let recipe = DataObject(name: r.name, children: [], details: r.description)
+                    recipes.append(recipe)
+                }
+                
+                dayData.append(DataObject(name: name, children: recipes))
             }
             data.append(DataObject(name: "Day \(String(i))", children: dayData))
             i += 1
@@ -90,18 +101,11 @@ class TreeViewController: UIViewController, RATreeViewDelegate, RATreeViewDataSo
     
     func treeView(_ treeView: RATreeView, didSelectRowForItem item: Any) {
         let item = item as! DataObject
-        let level = treeView.levelForCell(forItem: item)
-        print("SELECTED \(item.name)")
-        print("LEVEL \(level)")
         
-        if level == 2 {
-//            let detailsController = DetailsViewController()
-//            detailsController.detailsText = item.details
+        if item.details != "" {
             selectedText = item.details
             DispatchQueue.main.async {
                 self.performSegue(withIdentifier: "segueDetails", sender: self)
-//                detailsController.performSegueWith(withIdentifier: "segueDetails", sender: self)
-//                self.navigationController?.pushViewController(detailsController, animated: true)
             }
         }
     }
@@ -120,33 +124,6 @@ class TreeViewController: UIViewController, RATreeViewDelegate, RATreeViewDataSo
         let level = treeView.levelForCell(forItem: item)
         cell.selectionStyle = .none
         cell.setup(withTitle: item.name, detailsText: item.details, level: level, additionalButtonHidden: false)
-        
-        print("level: \(level)")
-//
-//        if level == 2 {
-//            cell.additionButtonActionBlock = { [weak treeView] cell in
-//                print("Taping")
-//                guard let treeView = treeView else {
-//                    return;
-//                }
-//                let detailsController = DetailsViewController()
-//                let item = treeView.item(for: cell) as! DataObject
-//                detailsController.detailsText = item.details
-//                self.navigationController?.pushViewController(detailsController, animated: true)
-//            }
-//        } else {
-//            cell.additionButtonActionBlock = { [weak treeView] cell in
-//                guard let treeView = treeView else {
-//                    return;
-//                }
-//                print("Setting up")
-//                let item = treeView.item(for: cell) as! DataObject
-//                let newItem = DataObject(name: "Added value")
-//                item.addChild(newItem)
-//                treeView.insertItems(at: IndexSet(integer: item.children.count-1), inParent: item, with: RATreeViewRowAnimationNone);
-//                treeView.reloadRows(forItems: [item], with: RATreeViewRowAnimationNone)
-//            }
-//        }
         
         return cell
     }

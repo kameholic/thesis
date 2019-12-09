@@ -9,8 +9,8 @@
 import UIKit
 import EasyStash
 
-func generateDiet(controller: UIViewController, method:String, endPoint: String, postString: String) {
-    post(method: method, endPoint: endPoint, postString: postString, completion: { response, status in
+func generateDiet(controller: UIViewController, method:String, endPoint: String, postData: [String:Any]) {
+    post(method: method, endPoint: endPoint, postData: postData, completion: { response, status in
         
         if response != nil, status != nil {
             let message = response!["message"] as! NSDictionary
@@ -21,16 +21,19 @@ func generateDiet(controller: UIViewController, method:String, endPoint: String,
                     UserData.shared.diet.days.removeAll()
                     for case let day as NSDictionary in diet {
                         print("Day \(i)")
-                        var dayData = [String:UserData.Recipe]()
+                        var dayData = [String:[UserData.Recipe]]()
                         for dine_type in ["breakfast", "lunch", "dinner"] {
-                            if let dine = day[dine_type] as? NSDictionary {
-                                print("Dine \(dine_type)")
-                                if  let name = dine["name"] as? NSString,
-                                    let desc = dine["description"] as? NSString,
-                                    let portion = dine["portion"] as? Double {
-                                    let recipe = UserData.Recipe(name: name as String, portion: portion as! Double, description: desc as String)
-                                    print("Name \(name) Description \(desc))")
-                                    dayData[dine_type] = recipe
+                            dayData[dine_type] = [UserData.Recipe]()
+                            print("Dine \(dine_type)")
+                            if let dine = day[dine_type] as? NSArray {
+                                for case let ing as NSDictionary in dine {
+                                    if  let name = ing["name"] as? NSString,
+                                        let desc = ing["description"] as? NSString,
+                                        let portion = ing["portion"] as? Double {
+                                        let recipe = UserData.Recipe(name: name as String, portion: portion as! Double, description: desc as String)
+                                        print("Name \(name) Description \(desc))")
+                                        dayData[dine_type]!.append(recipe)
+                                    }
                                 }
                             }
                         }

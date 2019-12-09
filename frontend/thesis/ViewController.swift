@@ -50,7 +50,7 @@ class ViewController: UIViewController {
                         print(AuthData.shared.accessToken)
                         self.pullAllergies()
                         self.pullData()
-                        generateDiet(controller: self, method: "GET", endPoint: "generate_diet", postString: "")
+                        generateDiet(controller: self, method: "GET", endPoint: "generate_diet", postData: [String:Any]())
                         DispatchQueue.main.async {
                             self.performSegue(withIdentifier: "segueLogin", sender: self)
                         }
@@ -180,7 +180,7 @@ class ViewController: UIViewController {
                 print(AuthData.shared.accessToken)
                 if AuthData.shared.accessTokenIsValid() {
                     self.pullData()
-                    generateDiet(controller: self, method: "GET", endPoint: "generate_diet", postString: "")
+                    generateDiet(controller: self, method: "GET", endPoint: "generate_diet", postData: [String:Any]())
                     self.performSegue(withIdentifier: "segueLogin", sender: self)
                 }
             } catch {
