@@ -53,7 +53,7 @@ func generateDiet(controller: UIViewController, method:String, endPoint: String,
                 showAlert(controller: controller, title: "Error", message: message)
             }
         } else {
-            showAlert(controller: controller, title: "Error", message: "Network error: could not connect")
+            //showAlert(controller: controller, title: "Error", message: "Network error: could not connect")
         }
     })
 }

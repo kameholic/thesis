@@ -106,7 +106,7 @@ class ViewController: UIViewController {
                     showAlert(controller: self, title: "Error", message: message)
                 }
             } else {
-                showAlert(controller: self, title: "Error", message: "Network error: could not connect")
+                //showAlert(controller: self, title: "Error", message: "Network error: could not connect")
             }
         })
     }
@@ -142,7 +142,7 @@ class ViewController: UIViewController {
                     showAlert(controller: self, title: "Error", message: message)
                 }
             } else {
-                showAlert(controller: self, title: "Error", message: "Network error: could not connect")
+                //showAlert(controller: self, title: "Error", message: "Network error: could not connect")
             }
         })
     }
